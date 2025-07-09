@@ -1,5 +1,6 @@
 mnist_data
 *.sh
+*.txt
 #ignore executables
 *_exe
 *.out
