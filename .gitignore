@@ -6,4 +6,4 @@ mnist_data
 *.out
 *.bin
 *.elf
-data
+data/
