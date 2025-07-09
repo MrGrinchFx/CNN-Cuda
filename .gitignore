@@ -1,4 +1,5 @@
 mnist_data
+data
 *.sh
 *.txt
 #ignore executables
@@ -6,4 +7,3 @@ mnist_data
 *.out
 *.bin
 *.elf
-data/
