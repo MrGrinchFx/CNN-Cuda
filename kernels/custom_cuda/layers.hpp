@@ -10,17 +10,6 @@ protected:
   bool training = true; // change for training or validation passes.
 
 public:
-  enum class ActFunc {
-    conv = 0,
-    linear = 1,
-    batchNorm = 2,
-    pool = 3,
-    flatten = 4,
-    relu = 5,
-    sigmoid = 6, // TODO
-    tanh = 7,    // TODO
-    softmax = 8,
-  };
   virtual void forward(T *d_input, T *d_output, int batch_size) = 0;
   virtual void backward(T *d_output_grad, int batch_size) = 0;
 
@@ -39,8 +28,8 @@ private:
 
 public:
   Linear(T numInputs, T numOutputs) {}
-  void forward() { std::cout << "TODO forward conv" << std::endl; }
-  void backward() { std::cout << "TODO backward conv" << std::endl; }
+  void forward() override { std::cout << "TODO forward conv" << std::endl; }
+  void backward() override { std::cout << "TODO backward conv" << std::endl; }
   void update() { std::cout << "TODO update conv" << std::endl; }
 };
 
@@ -60,8 +49,8 @@ public:
 
   ~Conv() {}
 
-  void forward() { std::cout << "TODO forward conv" << std::endl; }
-  void backward() { std::cout << "TODO backward conv" << std::endl; }
+  void forward() override { std::cout << "TODO forward conv" << std::endl; }
+  void backward() override { std::cout << "TODO backward conv" << std::endl; }
   void update() { std::cout << "TODO update conv" << std::endl; }
 };
 
@@ -72,10 +61,11 @@ private:
 
 public:
   Flatten() : startDim(startDim) {}
-  ~Flatten() void forward() {
-    std::cout << "TODO forward flatten" << std::endl;
+  ~Flatten() {}
+  void forward() override { std::cout << "TODO forward flatten" << std::endl; }
+  void backward() override {
+    std::cout << "TODO backward flatten" << std::endl;
   }
-  void backward() { std::cout << "TODO backward flatten" << std::endl; }
   void update() { std::cout << "TODO update flatten" << std::endl; }
 };
 
@@ -86,8 +76,12 @@ private:
 
 public:
   BatchNorm(int numInputs) : numInputs(numInputs) {}
-  void forward() { std::cout << "TODO forward batch norm" << std::endl; }
-  void backward() { std::cout << "TODO backward batch norm" << std::endl; }
+  void forward() override {
+    std::cout << "TODO forward batch norm" << std::endl;
+  }
+  void backward() override {
+    std::cout << "TODO backward batch norm" << std::endl;
+  }
   void update() { std::cout << "TODO update batch norm" << std::endl; }
 };
 
@@ -101,8 +95,10 @@ public:
       : kernelSize(kernelSize), stride(stride) {}
   ~Pooling() {}
 
-  void forward() { std::cout << "TODO forward pooling" << std::endl; }
-  void backward() { std::cout << "TODO backward pooling" << std::endl; }
+  void forward() override { std::cout << "TODO forward pooling" << std::endl; }
+  void backward() override {
+    std::cout << "TODO backward pooling" << std::endl;
+  }
   void update() { std::cout << "TODO update pooling" << std::endl; }
 };
 
@@ -114,17 +110,15 @@ private:
 public:
   ReLu(int numInputs) : Layer<T>(numInputs) {
     std::cout << "TODO ReLU constructor" << std::endl;
-
     // allocate device array if you need to keep it
     // CUDA_CHECK(cudaMalloc(&d_input, sizeof(T) * this->_numInputs));
   }
-
   //~ReLu() { CUDA_CHECK(cudaFree(d_input)); }
-
   void forward(T *d_input, int size) override {
     // launch your CUDA kernel here, e.g., relu_forward_kernel<<<...>>>(...)
     std::cout << "Running ReLU forward on " << size << " elements" << std::endl;
   }
+  void backward() override { std::cout << "TODO backward RELU" << std::endl; }
 };
 
 template <typename T> class Softmax : virtual public Layer<T> {
@@ -135,8 +129,9 @@ private:
 public:
   Softmax(int numInputs) : numInputs(numInputs) {}
   ~Softmax() {}
-  void forward() { std::cout << "TODO forward Softmax" << std::endl; }
-  void backward() { std::cout << "TODO backward Softmax" << std::endl; }
+  void forward() override { std::cout << "TODO forward Softmax" << std::endl; }
+  void backward() override {
+    std::cout << "TODO backward Softmax" << std::endl;
+  }
   void update() { std::cout << "TODO update Softmax" << std::endl; }
 };
-}

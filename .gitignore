@@ -1,6 +1,7 @@
 mnist_data
 data
 *.sh
+ideas.txt
 #ignore executables
 *_exe
 *.out

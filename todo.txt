@@ -1,0 +1,17 @@
+Completed Tasks:
+1) Decided on the deliverables of the project, how a user can define their own architecture and instantiate the model
+2) Implemented the construction of the neural network layers in the Architecture class.
+3) Set out the boiler plate code for most of the classes, just have to implement them now.
+
+ToDos:
+1) Figure out and implement the forward, backward, and update methods for each of the layers in layers.hpp
+This will probably where the kernels are launched and thus I should probably implement the kernels in the layerKernels.cu
+2)Start figuring out how to make the CMAKE config 
+3) Start the implementation for loading batches into the model and figure out how that's going to work 
+4) Figure out and implement the training loop for the Architecture class.
+5) Read a couple chapters on convolution and DNNs just to make sure that I know whats going on.
+6) Implement the Softmax layer and Loss Function. Also have to figure out how that layer is going to work.
+7) Read up on some of the math involved. (Gradients, partial derivatives, and vector logic for that)
+Future Ideas:
+1) Implement other activation functions like TanH and Sigmoid.
+2) Test Naive GPU implementation and try to optimize the kernels further

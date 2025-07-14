@@ -9,11 +9,6 @@ private:
 public:
   Architecture<T>() {}
   std::vector<Layer<T>> getLayersVector() { return layersVector; }
-  void addLinear(int numInputs, int numOutputs) {
-    // Responsible for taking in tuple arguments
-    Linear<T> *layer = new Linear<T>(numInputs, numOutputs);
-    layersVector.push_back(layer);
-  }
   void train() {
     // TODO
     // We're going to have 2 inner loops for both Forward and Backward
@@ -22,26 +17,40 @@ public:
     // for loop that will load batches of data into the model each iteration. We
     // will also handle the data loading in here most likely."addMaxPool"
   }
+
   void addConv(int numInputs, int numOutputs, int kernelSize, int stride,
                int padding) {
-    // TODO:
-    Conv<T> *layer = std::make_unique();
+    Conv<T> *layer =
+        new Conv<T>(numInputs, numOutputs, kernelSize, stride, padding);
+    layersVector.push_back(std::make_unique(layer));
   }
 
   void printResults() {
     // TODO
   }
-  void addRelu() {
-    // TODO
+  void addLinear(int numInputs, int numOutputs) {
+    // Responsible for taking in tuple arguments
+    Linear<T> *layer = new Linear<T>(numInputs, numOutputs);
+    layersVector.push_back(layer);
+  }
+
+  void addRelu(int numInputs) {
+    ReLu<T> *layer = new ReLu<T>(numInputs);
+    layersVector.push_back(std::make_unique(layer));
   }
 
   void addMaxPool(int kernelSize, int stride) {
-    // TODO
+    Pooling<T> *layer = new Pooling<T>(kernelSize, stride);
+    layersVector.push_back(std::make_unique(layer));
   }
-  void addBatchNorm(int, int) {
-    // TODO
+
+  void addBatchNorm(int numFeatures) {
+    BatchNorm<T> *layer = new BatchNorm<T>(numFeatures);
+    layersVector.push_back(std::make_unique(layer));
   }
+
   void addFlatten(int startDim) {
-    // TODO
+    Flatten<T> *layer = new Flatten<T>(startDim);
+    layersVector.push_back(std::make_unique(layer));
   }
 };
