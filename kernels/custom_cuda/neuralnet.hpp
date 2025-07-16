@@ -9,20 +9,32 @@ private:
 public:
   Architecture<T>() {}
   std::vector<Layer<T>> getLayersVector() { return layersVector; }
-  void train() {
+  void train(int trainIterations) {
     // TODO
     // We're going to have 2 inner loops for both Forward and Backward
     // propagation, as well as the calling of the softmax and loss function
     // computation in between both loops. This will be wrapped around a larger
     // for loop that will load batches of data into the model each iteration. We
     // will also handle the data loading in here most likely."addMaxPool"
+
+    // main loops
+    for (int i = 0; i < trainIterations; i++) {
+      for (auto it = layersVector.begin(); it != layersVector.end(); i++) {
+        // TODO forward propogation logic
+      }
+      // TODO perform SOFTMAX AND LOSS CALC
+      for (auto it = layersVector.rbegin(); it != layersVector.rend(); it++) {
+        // TODO backpropogation logic
+      }
+      // print results of the training (i.e accuracy, training time, and etc.)
+      printResults();
+    }
   }
 
   void addConv(int numInputs, int numOutputs, int kernelSize, int stride,
                int padding) {
-    Conv<T> *layer =
-        new Conv<T>(numInputs, numOutputs, kernelSize, stride, padding);
-    layersVector.push_back(std::make_unique(layer));
+    layersVector.push_back(std::make_unique<Conv<T>>(
+        numInputs, numOutputs, kernelSize, stride, padding));
   }
 
   void printResults() {
@@ -30,27 +42,22 @@ public:
   }
   void addLinear(int numInputs, int numOutputs) {
     // Responsible for taking in tuple arguments
-    Linear<T> *layer = new Linear<T>(numInputs, numOutputs);
-    layersVector.push_back(layer);
+    layersVector.push_back(std::make_unique<Linear<T>>(numInputs, numOutputs));
   }
 
   void addRelu(int numInputs) {
-    ReLu<T> *layer = new ReLu<T>(numInputs);
-    layersVector.push_back(std::make_unique(layer));
+    layersVector.push_back(std::make_unique<ReLu<T>>(numInputs));
   }
 
   void addMaxPool(int kernelSize, int stride) {
-    Pooling<T> *layer = new Pooling<T>(kernelSize, stride);
-    layersVector.push_back(std::make_unique(layer));
+    layersVector.push_back(std::make_unique<Pooling<T>>(kernelSize, stride));
   }
 
   void addBatchNorm(int numFeatures) {
-    BatchNorm<T> *layer = new BatchNorm<T>(numFeatures);
-    layersVector.push_back(std::make_unique(layer));
+    layersVector.push_back(std::make_unique<BatchNorm<T>>(numFeatures));
   }
 
   void addFlatten(int startDim) {
-    Flatten<T> *layer = new Flatten<T>(startDim);
-    layersVector.push_back(std::make_unique(layer));
+    layersVector.push_back(std::make_unique<Flatten<T>>(startDim));
   }
 };

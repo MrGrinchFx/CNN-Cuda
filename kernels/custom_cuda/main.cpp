@@ -42,9 +42,9 @@ int main() {
   myModel.addMaxPool(2, 2);
   myModel.addConv(32, 64, 5, 1, 2);
   myModel.addLinear(14 * 14 * 64, 1024);
-  myModel.addRelu();
+  myModel.addRelu(1024);
   myModel.addLinear(1024, numClasses);
-  myModel.train();
+  myModel.train(100);
   myModel.printResults();
 
   return 0;

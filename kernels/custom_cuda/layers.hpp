@@ -1,8 +1,9 @@
 #pragma once
 
 #include "utils.hpp"
+#include <algorithm>
 #include <iostream>
-
+#include <random>
 template <typename T> class Layer {
 protected:
   int numInputs = 0;
@@ -23,11 +24,26 @@ public:
 template <typename T> class Linear : virtual public Layer<T> {
 private:
   // weights (Input Nodes x Output Nodes) and biases (Input Nodes)
-  T *weights = nullptr;
-  T *biases = nullptr;
+  std::vector<T> weights_;
+  std::vector<T> biases_;
+  std::vector<T> input_d;
+  std::vector<T> output_d;
 
 public:
-  Linear(T numInputs, T numOutputs) {}
+  Linear(int numInputs, int numOutputs) {
+    weights_.resize(numInputs * numOutputs);
+    biases_.resize(numOutputs);
+    input_d.resize(numInputs);
+    output_d.resize(numOutputs);
+
+    // generate random weights and biases
+    std::mt19937 rng(std::random_device{}());
+    std::uniform_real_distribution<T> dist(static_cast<T>(-10.0),
+                                           static_cast<T>(10.0));
+    std::generate(weights_.begin(), weights_.end(),
+                  [&]() { return dist(rng); });
+    std::generate(biases_.begin(), biases_.end(), [&]() { return dist(rng); });
+  }
   void forward() override { std::cout << "TODO forward conv" << std::endl; }
   void backward() override { std::cout << "TODO backward conv" << std::endl; }
   void update() { std::cout << "TODO update conv" << std::endl; }
@@ -35,17 +51,21 @@ public:
 
 template <typename T> class Conv : virtual public Layer<T> {
 private:
-  T *kernel = nullptr;
-  int numInputs;
-  int numOutputs;
-  int stride;
-  int kernelSize;
-  int padding;
+  std::vector<T> kernel;
+  std::vector<T> input_d;
+  std::vector<T> output_d;
+  int numInputs_;
+  int numOutputs_;
+  int kernelSize_;
+  int stride_;
+  int padding_;
 
 public:
   Conv(int numInputs, int numOutputs, int kernelSize, int stride, int padding)
-      : numInputs(numInputs), numOutputs(numOutputs), kernelSize(kernelSize),
-        stride(stride), padding(padding) {}
+      : numInputs_(numInputs), numOutputs_(numOutputs), kernelSize_(kernelSize),
+        stride_(stride), padding_(padding) {
+    kernel.resize(kernelSize * kernelSize);
+  }
 
   ~Conv() {}
 
