@@ -89,21 +89,26 @@ public:
   void update() { std::cout << "TODO update flatten" << std::endl; }
 };
 
-template <typename T> class BatchNorm : virtual public Layer<T> {
-
-private:
-  int numInputs;
-
-public:
-  BatchNorm(int numInputs) : numInputs(numInputs) {}
-  void forward() override {
-    std::cout << "TODO forward batch norm" << std::endl;
-  }
-  void backward() override {
-    std::cout << "TODO backward batch norm" << std::endl;
-  }
-  void update() { std::cout << "TODO update batch norm" << std::endl; }
-};
+// TODO later
+// template <typename T> class BatchNorm : virtual public Layer<T> {
+//
+// private:
+//   int numInputs;
+//
+// public:
+//   BatchNorm(int numInputs) : numInputs(numInputs) {
+//
+// }
+//
+//   void forward() override {
+//     std::cout << "TODO forward batch norm" << std::endl;
+//   }
+//
+//  void backward() override {
+//     std::cout << "TODO backward batch norm" << std::endl;
+//   }
+//   void update() { std::cout << "TODO update batch norm" << std::endl; }
+// };
 
 template <typename T> class Pooling : virtual public Layer<T> {
 private:
