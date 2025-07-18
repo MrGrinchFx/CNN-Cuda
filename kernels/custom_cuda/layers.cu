@@ -105,7 +105,7 @@ public:
     // Calculate the number of blocks needed
     dim3 kernelGridDim((totalElements + threadsPerBlock - 1) / threadsPerBlock);
     setup_curand_states<<<kernelGridDim, kernelBlockDim>>>(&kernel_state,
-                                                           totalElements);
+                                                           totalElements * sizeof(curandState);
     CUDA_CHECK(cudaGetLastError());
 
     initialize_values<<<stateGridDim, stateBlockDim>>>(&kernel, kernel_state,
@@ -115,26 +115,28 @@ public:
 
   ~Conv() {}
 
-  void forward() override { std::cout << "TODO forward conv" << std::endl; }
+  void forward(T *d_input, T *d_output) override {
+    std::cout << "TODO forward conv" << std::endl;
+  }
   void backward() override { std::cout << "TODO backward conv" << std::endl; }
   void update() { std::cout << "TODO update conv" << std::endl; }
 };
-
-template <typename T> class Flatten : virtual public Layer<T> {
-
-private:
-  int startDim;
-
-public:
-  Flatten() : startDim(startDim) {}
-  ~Flatten() {}
-  void forward() override { std::cout << "TODO forward flatten" << std::endl; }
-  void backward() override {
-    std::cout << "TODO backward flatten" << std::endl;
-  }
-  void update() { std::cout << "TODO update flatten" << std::endl; }
-};
-
+//
+// template <typename T> class Flatten : virtual public Layer<T> {
+//
+// private:
+//  int startDim;
+//
+// public:
+//  Flatten() : startDim(startDim) {}
+//  ~Flatten() {}
+//  void forward() override { std::cout << "TODO forward flatten" << std::endl;
+//  } void backward() override {
+//    std::cout << "TODO backward flatten" << std::endl;
+//  }
+//  void update() { std::cout << "TODO update flatten" << std::endl; }
+//};
+//
 // TODO later
 // template <typename T> class BatchNorm : virtual public Layer<T> {
 //
@@ -166,7 +168,9 @@ public:
       : kernelSize(kernelSize), stride(stride) {}
   ~Pooling() {}
 
-  void forward() override { std::cout << "TODO forward pooling" << std::endl; }
+  void forward(T *d_input, T *d_output) override {
+    std::cout << "TODO forward pooling" << std::endl;
+  }
   void backward() override {
     std::cout << "TODO backward pooling" << std::endl;
   }
@@ -175,9 +179,6 @@ public:
 
 template <typename T> class ReLu : virtual public Layer<T> {
 
-private:
-  T *d_input = nullptr; // optional, depends on your design
-
 public:
   ReLu(int numInputs) : Layer<T>(numInputs) {
     std::cout << "TODO ReLU constructor" << std::endl;
@@ -185,7 +186,7 @@ public:
     // CUDA_CHECK(cudaMalloc(&d_input, sizeof(T) * this->_numInputs));
   }
   //~ReLu() { CUDA_CHECK(cudaFree(d_input)); }
-  void forward(T *d_input, int size) override {
+  void forward(T *d_input, T *d_output, int size) override {
     // launch your CUDA kernel here, e.g., relu_forward_kernel<<<...>>>(...)
     std::cout << "Running ReLU forward on " << size << " elements" << std::endl;
   }
@@ -198,7 +199,7 @@ private:
   int numInputs;
 
 public:
-  Softmax(int numInputs) : numInputs(numInputs) {}
+  Softmax(T *d_input, int numInputs) : numInputs(numInputs) {}
   ~Softmax() {}
   void forward() override { std::cout << "TODO forward Softmax" << std::endl; }
   void backward() override {
