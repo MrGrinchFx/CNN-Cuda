@@ -1,27 +1,7 @@
-#include "neuralnet.hpp"
+#include "cuda_runtime_api.h"
 #include "utils.hpp"
 #include <iostream>
-
-using std::cout, std::endl;
-
-// data loader
-std::vector<uint8_t> load_mnist_images(const std::string &filename,
-                                       int num_images, int image_size) {
-  std::ifstream file(filename, std::ios::binary);
-  file.ignore(16); // skip header
-  std::vector<uint8_t> images(num_images * image_size);
-  file.read(reinterpret_cast<char *>(images.data()), images.size());
-  return images;
-}
-
-std::vector<uint8_t> load_mnist_labels(const std::string &filename,
-                                       int num_labels) {
-  std::ifstream file(filename, std::ios::binary);
-  file.ignore(8); // skip header
-  std::vector<uint8_t> labels(num_labels);
-  file.read(reinterpret_cast<char *>(labels.data()), labels.size());
-  return labels;
-}
+#include <neuralnet.cpp>
 
 int main() {
   // Starting point of the include
@@ -29,6 +9,9 @@ int main() {
   // Call the constructor for an architecture object (it will accept a vector of
   // layers and activations) Call a MLP.train() that will conduct training (Will
   // define training logic in a separate file)
+  auto cudaStatus = cudaSetDevice(0);
+  CHECK_EQ(cudaStatus, cudaSuccess,
+           "cudaSetDevice failed!  Do you have a CUDA-capable GPU installed?");
   Architecture<float> myModel;
   int numClasses = 10; // number of different digits in MNIST
 
@@ -38,6 +21,11 @@ int main() {
   load_mnist_labels("../../data/MNIST/raw/t10k-labels-idx1-ubyte", 10000);
   // example usage | check ~/python/python_reference.ipynb for the pytorch
   // equivalent of this model!
+  // First call for the creation of a Dataset and then adding layers will
+  // involve "connecting" them
+  myModel.setNumClasses(numClasses);
+  myModel.setInputDim(28, 28);
+  myModel.addBatchSize(64);
   myModel.addConv(1, 32, 5, 2, 1);
   myModel.addMaxPool(2, 2);
   myModel.addConv(32, 64, 5, 1, 2);

@@ -1,10 +1,17 @@
-#include "layers.hpp"
-#include <iostream>
+#include "Layers/layers.hpp"
 #include <memory>
 #include <vector>
 template <typename T> class Architecture {
 private:
   std::vector<std::unique_ptr<Layer<T>>> layersVector;
+  // stores upstream inputs
+  std::vector<std::unique_ptr<T>> fwdIntermediatePtrs;
+  // stores upstream gradients
+  std::vector<std::unique_ptr<T>> bkwdIntermediatePtrs;
+  int numClasses;
+  int imgHeight;
+  int imgWidth;
+  int batchSize;
 
 public:
   Architecture<T>() {}
@@ -19,18 +26,29 @@ public:
 
     // main loops
     for (int i = 0; i < trainIterations; i++) {
-      for (auto it = layersVector.begin(); it != layersVector.end(); i++) {
+      for (int fwd = 0; fwd < layersVector.size(); fwd++) {
         // TODO forward propogation logic
+        // Go through each layer and pass into the input
+        // fwdIntermediatePtrs[fwd] for the corresponding output of the previous
+        // layer
       }
       // TODO perform SOFTMAX AND LOSS CALC
-      for (auto it = layersVector.rbegin(); it != layersVector.rend(); it++) {
+      for (int bkwd = layersVector.size() - 1; bkwd > 0; bkwd--) {
         // TODO backpropogation logic
+        // Go throuh each layer backwards and pass into the input
+        // bkwdIntermediatePtrs[bkwd] for the corresponding gradient of the next
+        // layer into the current layer
       }
       // print results of the training (i.e accuracy, training time, and etc.)
       printResults();
     }
   }
-
+  void setNumClasses(int classesAmt) { numClasses = classesAmt; }
+  void setInputDim(int height, int width) {
+    imgHeight = height;
+    imgWidth = width;
+  }
+  void addBatchSize(int batchSize_) { batchSize = batchSize_; }
   void addConv(int numInputs, int numOutputs, int kernelSize, int stride,
                int padding) {
     layersVector.push_back(std::make_unique<Conv<T>>(
@@ -41,7 +59,6 @@ public:
     // TODO
   }
   void addLinear(int numInputs, int numOutputs) {
-    // Responsible for taking in tuple arguments
     layersVector.push_back(std::make_unique<Linear<T>>(numInputs, numOutputs));
   }
 
@@ -53,11 +70,11 @@ public:
     layersVector.push_back(std::make_unique<Pooling<T>>(kernelSize, stride));
   }
 
-  void addBatchNorm(int numFeatures) {
-    layersVector.push_back(std::make_unique<BatchNorm<T>>(numFeatures));
-  }
+  // void addBatchNorm(int numFeatures) {
+  //   layersVector.push_back(std::make_unique<BatchNorm<T>>(numFeatures));
+  // }
 
-  void addFlatten(int startDim) {
-    layersVector.push_back(std::make_unique<Flatten<T>>(startDim));
-  }
+  // void addFlatten(int startDim) {
+  //   layersVector.push_back(std::make_unique<Flatten<T>>(startDim));
+  // }
 };

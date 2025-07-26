@@ -1,23 +1,37 @@
-#pragma once
-#include "layerKernels.cu"
-#include "utils.hpp"
-#include <algorithm>
+#include "../utils.hpp"
+#include "layers.hpp"
 #include <cuda_device_runtime_api.h>
 #include <cuda_runtime_api.h>
 #include <curand_kernel.h>
 #include <iostream>
-#include <random>
 #include <vector_types.h>
 template <typename T> class Layer {
-protected:
-  int numInputs = 0;
-  int numOutputs = 0;
+private:
+  int numInputChannels = 0;
+  int numOutputChannels = 0;
   bool training = true; // change for training or validation passes.
+  std::unique_ptr < Layer *next;
+  Layer *prev;
 
 public:
+  // when forward is called from training loop, we will pass in the intermediate
+  // data pointer, and have the same intermediate data pointer as d_output as
+  // well. Logic here is that the same pointer is used to serve as the input and
+  // output of a layer, similar to how a buffer would work.
   virtual void forward(T *d_input, T *d_output, int batch_size) = 0;
-  virtual void backward(T *d_output_grad, int batch_size) = 0;
+  // when backward is called from training loop, we will pass in the
+  // intermediate data pointer for the gradient matrices (dE_dY), and then we
+  // will also use dE_dX to pass to the previous layer
+  virtual void backward(T *dE_dY, T *dE_dX, int batch_size) = 0;
+  // returns the pointer to the output of a particular layer for its use in the
+  // next layer.
+  virtual void returnLayerPtr() = 0;
+  Layer &connect(Layer &otherLayer) {
+    this->next = &otherLayer;
+    otherLayer.prev = this;
 
+    return otherLayer;
+  }
   // OPTIONAL: SAVING AND LOADING WEIGHTS
   // virtual void saveWeights() = 0;
   // virtual void loadWeights() = 0;
@@ -33,11 +47,12 @@ private:
 
 public:
   Linear(int numInputs, int numOutputs) {
-    // Allocate device memory for inputs, outputs, weights, and biases
-    CUDA_CHECK(cudaMalloc(&weights, numOutputs * numInputs * sizeof(T)));
-    CUDA_CHECK(cudaMalloc(&biases, numOutputs * sizeof(T)));
-
-    // === Initialize Weights ===
+    // Allocate device memory for inputs, weights, and biases
+    CUDA_CHECK(
+        cudaMalloc(&weights, batch_size * numOutputs * numInputs * sizeof(T)));
+    CUDA_CHECK(cudaMalloc(&biases, batch_size * numOutputs * sizeof(T)));
+    CUDA_CHECK(cudaMalloc(&outputs, batch_size * numOutputs * sizeof(T)));
+    //  Initialize Weights with rand values
     int totalWeights = numInputs * numOutputs;
     int blockSize = 256;
     int gridSizeWeights = (totalWeights + blockSize - 1) / blockSize;
@@ -54,48 +69,38 @@ public:
                                                       totalWeights);
     CUDA_CHECK(cudaDeviceSynchronize());
     CUDA_CHECK(cudaGetLastError());
-
-    // === Initialize Biases ===
-    int totalBiases = numOutputs;
-    int gridSizeBiases = (totalBiases + blockSize - 1) / blockSize;
-
-    curandState *bias_states;
-    CUDA_CHECK(cudaMalloc(&bias_states, totalBiases * sizeof(curandState)));
-
-    setup_curand_states<<<gridSizeBiases, blockSize>>>(
-        bias_states, time(NULL) + 1234); // Different seed
-    CUDA_CHECK(cudaGetLastError());
-
-    initialize_values<<<gridSizeBiases, blockSize>>>(biases, bias_states,
-                                                     totalBiases);
-    CUDA_CHECK(cudaGetLastError());
-
-    // Optional: free temporary RNG state memory if you won’t reuse it
-    CUDA_CHECK(cudaFree(weight_states));
-    CUDA_CHECK(cudaFree(bias_states));
+    // Initialize biases with zeroes
   }
-  void forward(T *d_input, T *d_output) override {}
+  void forward(T *d_input, T *d_output, int batchSize) override {
+    dim3 forwardBlockSize;
+    dim3 forwardGridSize;
+
+    linearForward<<<forwardGridSize, forwardBlockSize>>>();
+  }
   void backward() override { std::cout << "TODO backward conv" << std::endl; }
   void update() { std::cout << "TODO update conv" << std::endl; }
+  void returnLayerPtr() { return outputs; }
 };
 
 template <typename T> class Conv : virtual public Layer<T> {
 private:
   T *kernel;
-  int numInputs_;
-  int numOutputs_;
-  int kernelSize_;
+  int numInputsChannels;
+  int numOutputsChannels;
+  int kernelWidth;
+  int kernelHeight;
   int totalElements;
-  int stride_;
-  int padding_;
+  int stride;
+  int padding;
 
 public:
   Conv(int numInputs, int numOutputs, int kernelSize, int stride, int padding)
-      : numInputs_(numInputs), numOutputs_(numOutputs), kernelSize_(kernelSize),
-        stride_(stride), padding_(padding),
-        totalElements(kernelSize * kernelSize) {
+      : numInputChannels(numInputs), numOutputChannels(numOutputs),
+        kernelHeight(kernelSize), kernelWidth(kernelSize), stride(stride),
+        padding(padding), totalElements(kernelSize * kernelSize *
+                                        numInputChannels * numOutputsChannels) {
     CUDA_CHECK(cudaMalloc(&kernel, sizeof(T) * totalElements));
-
+    CUDA_CHECK(cudaMalloc(&outputs, sizeof(T) * numOutputs));
     curandState *kernel_state;
     CUDA_CHECK(cudaMalloc(&kernel_state, sizeof(curandState) * totalElements));
     // Define block and grid dimensions for kernel launch
@@ -104,23 +109,25 @@ public:
 
     // Calculate the number of blocks needed
     dim3 kernelGridDim((totalElements + threadsPerBlock - 1) / threadsPerBlock);
-    setup_curand_states<<<kernelGridDim, kernelBlockDim>>>(&kernel_state,
-                                                           totalElements * sizeof(curandState);
+    setup_curand_states<<<kernelGridDim, kernelBlockDim>>>(
+        &kernel_state, totalElements * sizeof(curandState));
     CUDA_CHECK(cudaGetLastError());
 
-    initialize_values<<<stateGridDim, stateBlockDim>>>(&kernel, kernel_state,
-                                                       totalElements);
+    initialize_values<<<kernelGridDim, stateBlockDim>>>(&kernel, kernel_state,
+                                                        totalElements);
     CUDA_CHECK(cudaGetLastError());
   }
 
   ~Conv() {}
 
-  void forward(T *d_input, T *d_output) override {
+  void forward(T *d_input, T *d_output, int batchSize) override {
     std::cout << "TODO forward conv" << std::endl;
   }
   void backward() override { std::cout << "TODO backward conv" << std::endl; }
   void update() { std::cout << "TODO update conv" << std::endl; }
+  void returnLayerPtr() override { return outputs; }
 };
+
 //
 // template <typename T> class Flatten : virtual public Layer<T> {
 //
@@ -131,7 +138,7 @@ public:
 //  Flatten() : startDim(startDim) {}
 //  ~Flatten() {}
 //  void forward() override { std::cout << "TODO forward flatten" << std::endl;
-//  } void backward() override {
+
 //    std::cout << "TODO backward flatten" << std::endl;
 //  }
 //  void update() { std::cout << "TODO update flatten" << std::endl; }
@@ -164,23 +171,26 @@ private:
   int stride;
 
 public:
-  Pooling(int kernelSize, int stride)
-      : kernelSize(kernelSize), stride(stride) {}
+  Pooling(int kernelSize, int stride) : kernelSize(kernelSize), stride(stride) {
+    CUDA_CHECK(cudaMalloc(&outputs, sizeof(T) * FIGURE_OUT_LATER));
+  }
   ~Pooling() {}
 
-  void forward(T *d_input, T *d_output) override {
+  void forward(T *d_input, T *d_output, int batchSize) override {
     std::cout << "TODO forward pooling" << std::endl;
   }
   void backward() override {
     std::cout << "TODO backward pooling" << std::endl;
   }
   void update() { std::cout << "TODO update pooling" << std::endl; }
+  void returnLayerPtr() override { return outputs; }
 };
 
 template <typename T> class ReLu : virtual public Layer<T> {
 
 public:
-  ReLu(int numInputs) : Layer<T>(numInputs) {
+  ReLu(T *inputPtr, T *outputPtr, int numInputs, int batchSize)
+      : Layer<T>(numInputs) {
     std::cout << "TODO ReLU constructor" << std::endl;
     // allocate device array if you need to keep it
     // CUDA_CHECK(cudaMalloc(&d_input, sizeof(T) * this->_numInputs));
