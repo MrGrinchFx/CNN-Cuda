@@ -1,5 +1,5 @@
 #pragma once
-#include "../Data/storage.cu"
+#include "../Data/container.cu"
 #include <memory>
 #include <vector>
 template <typename T> class Layer {

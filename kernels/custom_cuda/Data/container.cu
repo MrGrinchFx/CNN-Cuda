@@ -1,10 +1,8 @@
 #include "../utils.hpp"
-#include "curand_kernel.h"
-#include "dataloader.hpp"
-#include "storage.hpp"
+#include "container.cuh"
 #include <cmath>
 #include <curand.h>
-#include <device_launch_parameters.h>
+#include <curand_kernel.h>
 #include <vector>
 
 template <typename T>

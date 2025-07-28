@@ -1,0 +1,3 @@
+/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build/CMakeFiles/NeuralNetProject.dir
+/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build/CMakeFiles/edit_cache.dir
+/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build/CMakeFiles/rebuild_cache.dir

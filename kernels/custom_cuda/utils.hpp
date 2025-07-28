@@ -1,13 +1,5 @@
 #pragma once
-#include <cstdint>  // uint8_t, uint32_t
-#include <fstream>  // ifstream, file I/O
-#include <iostream> // cout, cerr
-#include <memory>   // std::unique_ptr, std::make_unique
-#include <stdexcept>
-#include <string> // std::string
 #include <sys/types.h>
-#include <tuple>  // std::tuple if you use it
-#include <vector> // std::vector
 #define BLOCK_SIZE 256
 #define TILE_SIZE 16
 
@@ -33,3 +25,12 @@
   } while (0)
 
 #define RAW_PTR(vector) thrust::raw_pointer_cast(vector.data())
+
+#define INIT_CONTAINER(container_ptr, shape)                                   \
+  do {                                                                         \
+    if (container_ptr.get() == nullptr) {                                      \
+      container_ptr.reset(new Container<T>(shape));                            \
+    } else if (container_ptr->getShape() != shape) {                           \
+      container_ptr->resize(shape);                                            \
+    }                                                                          \
+  } while (0)

@@ -1,0 +1,74 @@
+[
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/bin/g++-14  -I/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda -I/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Data -I/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers -std=c++17 -o CMakeFiles/NeuralNetProject.dir/main.cpp.o -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/main.cpp",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/main.cpp",
+  "output": "CMakeFiles/NeuralNetProject.dir/main.cpp.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/bin/g++-14  -I/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda -I/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Data -I/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers -std=c++17 -o CMakeFiles/NeuralNetProject.dir/neuralnet.cpp.o -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/neuralnet.cpp",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/neuralnet.cpp",
+  "output": "CMakeFiles/NeuralNetProject.dir/neuralnet.cpp.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Data/container.cu -o CMakeFiles/NeuralNetProject.dir/Data/container.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Data/container.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Data/container.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Data/dataloader.cu -o CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Data/dataloader.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/conv.cu -o CMakeFiles/NeuralNetProject.dir/Layers/conv.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/conv.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Layers/conv.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/entropyLoss.cu -o CMakeFiles/NeuralNetProject.dir/Layers/entropyLoss.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/entropyLoss.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Layers/entropyLoss.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/flatten.cu -o CMakeFiles/NeuralNetProject.dir/Layers/flatten.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/flatten.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Layers/flatten.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/linear.cu -o CMakeFiles/NeuralNetProject.dir/Layers/linear.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/linear.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Layers/linear.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/maxPool.cu -o CMakeFiles/NeuralNetProject.dir/Layers/maxPool.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/maxPool.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Layers/maxPool.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/nllLoss.cu -o CMakeFiles/NeuralNetProject.dir/Layers/nllLoss.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/nllLoss.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Layers/nllLoss.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/relu.cu -o CMakeFiles/NeuralNetProject.dir/Layers/relu.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/relu.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Layers/relu.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/softmax.cu -o CMakeFiles/NeuralNetProject.dir/Layers/softmax.cu.o",
+  "file": "/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers/softmax.cu",
+  "output": "CMakeFiles/NeuralNetProject.dir/Layers/softmax.cu.o"
+}
+]

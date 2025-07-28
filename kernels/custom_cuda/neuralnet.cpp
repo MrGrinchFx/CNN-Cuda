@@ -1,4 +1,4 @@
-#include "Layers/layers.hpp"
+#include "Layers/layers.cuh"
 #include <memory>
 #include <vector>
 template <typename T> class Architecture {

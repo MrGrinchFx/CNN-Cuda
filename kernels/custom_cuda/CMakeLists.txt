@@ -1,71 +1,63 @@
-cmake_minimum_required(VERSION 3.15 FATAL_ERROR) # Require a modern CMake version
+cmake_minimum_required(VERSION 3.15 FATAL_ERROR) # CMake 3.15+ is good for CUDA support
 
-project(NeuralNetworkProject LANGUAGES CXX CUDA) # Declare project name and supported languages
+# Set the policy for FindCUDA module removal to NEW.
+# This helps ensure CMake uses its modern first-class CUDA language features
+# and avoids the old FindCUDA module's behavior that might not define CUDA::cudart.
+cmake_policy(SET CMP0146 NEW)
 
-# Set common compiler flags for C++
-set(CMAKE_CXX_STANDARD 17) # Use C++17 standard
+project(NeuralNetProject LANGUAGES CXX CUDA) # Declare both C++ and CUDA languages
+
+# --- Essential for LSP Integration (e.g., clangd) ---
+# This generates compile_commands.json in your build directory,
+# which LSPs use to understand compilation flags and include paths.
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# --- Set C++ Standard ---
+set(CMAKE_CXX_STANDARD 17) # Or 20, 23 etc., depending on your project's needs
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF) # Don't use GNU extensions by default
+set(CMAKE_CXX_EXTENSIONS OFF) # Prefer standard-compliant C++
 
-# Add typical warnings and optimizations for C++
-add_compile_options(-Wall -Wextra -Wpedantic) # Enable common warnings
-if (CMAKE_BUILD_TYPE MATCHES "Debug")
-  add_compile_options(-g) # Enable debug symbols
-else()
-  add_compile_options(-O3 -DNDEBUG) # Enable optimizations for release, disable asserts
-endif()
-
-# Set common compiler flags for CUDA
-# This uses the CUDA compiler driver (nvcc) and ensures consistency with C++ flags
-set(CMAKE_CUDA_STANDARD 17) # Use C++17 standard for CUDA host code
-set(CMAKE_CUDA_STANDARD_REQUIRED ON)
-set(CMAKE_CUDA_EXTENSIONS OFF)
-
-# Add typical warnings and optimizations for CUDA
-# These are passed to nvcc
-add_compile_options(
-    $<$<COMPILE_LANGUAGE:CUDA>:-arch=sm_75> # Example: Compile for compute capability 7.5 (adjust for your GPU)
-    $<$<COMPILE_LANGUAGE:CUDA>:-Wno-deprecated-gpu-targets> # Suppress warnings about older GPU targets
-    $<$<COMPILE_LANGUAGE:CUDA>:-rdc=true> # Enable relocatable device code (required for separate compilation)
-    $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr> # Relax constexpr rules for older nvcc versions
-)
-if (CMAKE_BUILD_TYPE MATCHES "Debug")
-  add_compile_options($<$<COMPILE_LANGUAGE:CUDA>:-g -G>) # Enable debug symbols and device-side debugging
-else()
-  add_compile_options($<$<COMPILE_LANGUAGE:CUDA>:-O3>) # Enable optimizations for CUDA
-endif()
-
-# Find CUDA toolkit
-find_package(CUDA REQUIRED)
-
-# Specify include directories
-# This is where your header files (like utils.hpp) reside
-include_directories(. ) # Current directory is where utils.hpp is
-
-# --- Define Libraries (if you plan to separate compilation) ---
-# It looks like layers.cu and layerKernels.cu might form a library.
-# This approach promotes modularity and faster compilation for large projects.
-
-# Add an executable target
-# Assuming main.cu contains the main function for the final application.
-# Combine all source files into one executable.
-add_executable(neural_network_app
-    main.cu
+# --- Source Files ---
+# Add your C++ source files
+set(CXX_SOURCES
     main.cpp
     neuralnet.cpp
-    layers.cu
-    layerKernels.cu
 )
 
-# Link the executable with CUDA libraries (cudart for runtime API)
-target_link_libraries(neural_network_app PRIVATE CUDA::cudart)
+# Find all .cu and .cuh files in Data and Layers directories
+# glob_recursive is useful here if you have subdirectories within Data/Layers
+file(GLOB_RECURSE CUDA_SOURCES
+    Data/*.cu
+    Layers/*.cu
+)
 
-# If you had more complex dependencies or third-party libraries, you'd add them here:
-# target_link_libraries(neural_network_app PRIVATE other_library_name)
+# Combine all source files
+set(ALL_SOURCES
+    ${CXX_SOURCES}
+    ${CUDA_SOURCES}
+)
 
-# --- Optional: Install rules ---
-# install(TARGETS neural_network_app DESTINATION bin)
+# --- Create Executable ---
+# IMPORTANT: Define the target *before* setting its properties or linking
+add_executable(${PROJECT_NAME} ${ALL_SOURCES})
 
-# --- Optional: Custom build steps or tests ---
-# add_test(...)
-# add_custom_command(...)
+# --- CUDA Specific Settings (on the target) ---
+# Specify the GPU architecture(s) your kernels will target.
+# IMPORTANT: Adjust this to your target GPU's compute capability.
+set(CUDA_ARCH_CODE "86") # <--- CHANGE THIS TO YOUR GPU'S ARCHITECTURE!
+set_property(TARGET ${PROJECT_NAME} PROPERTY CUDA_ARCHITECTURES ${CUDA_ARCH_CODE})
+
+
+# --- Include Directories ---
+# Add include directories for your header files (.hpp, .cuh)
+# CMake will automatically add the CUDA include path because LANGUAGES CXX CUDA is set.
+target_include_directories(${PROJECT_NAME} PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR} # For main.cpp, neuralnet.cpp, utils.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Data # For headers in Data/
+    ${CMAKE_CURRENT_SOURCE_DIR}/Layers # For headers in Layers/
+)
+
+# --- Link Libraries ---
+# Link against the CUDA runtime library. This is crucial.
+# Using CUDA_LIBRARIES variable as a fallback, which is set by the CUDA language module.
+target_link_libraries(${PROJECT_NAME} PRIVATE ${CUDA_LIBRARIES})
