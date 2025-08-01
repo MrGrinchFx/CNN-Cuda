@@ -117,3 +117,85 @@ template <typename T> bool Dataloader<T>::nextBatchIsHere(bool isTrain) {
     return this->testDataIdx < this->testData.size();
   }
 }
+
+template <typename T>
+unsigned int Dataloader<T>::convertBigEndian(unsigned int i) {
+  unsigned char b1, b2, b3, b4;
+  b1 = i % 0xFF;
+  b2 = (i >> 8) % 0xFF;
+  b3 = (i >> 16) % 0xFF;
+  b4 = (i >> 24) % 0xFF;
+
+  return ((unsigned int)b1 << 24) + ((unsigned int)b2 << 16) +
+         ((unsigned int)b3 << 8) + (b4);
+}
+template <typename T>
+void Dataloader<T>::readImgs(std::string fileName,
+                             std::vector<std::vector<T>> &imgs) {
+  std::ifstream file(fileName, std::ios::binary);
+  if (file.is_open()) {
+    unsigned int magic;
+    unsigned int numImgs;
+    unsigned int numRows;
+    unsigned int numCols;
+
+    file.read((char *)&magic, sizeof(magic));
+    file.read((char *)&numImgs, sizeof(numImgs));
+    file.read((char *)&numRows, sizeof(numRows));
+    file.read((char *)&numCols, sizeof(numCols));
+    magic = this->convertBigEndian(magic);
+    numImgs = this->convertBigEndian(numImgs);
+    numRows = this->convertBigEndian(numRows);
+    numCols = this->convertBigEndian(numCols);
+
+    // print out into console for confirmation
+    std::cout << fileName << "\n";
+    std::cout << "Number of Images Loaded: " << numImgs << "\n";
+    std::cout << "Number of (Rows, Cols): (" << numRows << ", " << numCols
+              << ")\n";
+
+    this->height = numRows;
+    this->width = numCols;
+
+    std::vector<unsigned char> image(numRows * numCols);
+    std::vector<T> normalizedImages(numRows * numCols * sizeof(T));
+
+    for (int i = 0; i < numImgs; i++) {
+      file.read((char *)&image[0], sizeof(unsigned char) * numRows * numCols);
+      for (int j = 0; j < numCols; j++) {
+        normalizedImages[i] = (T)image[i] / 255 - 0.5f;
+      }
+      imgs.push_back(normalizedImages);
+    }
+  }
+}
+
+template <typename T>
+void Dataloader<T>::readLabels(std::string fileName,
+                               std::vector<unsigned char> &labels) {
+  std::ifstream file(fileName, std::ios::binary);
+
+  if (file.is_open()) {
+    unsigned int magic = 0;
+    unsigned int numImgs = 0;
+    file.read((char *)&magic, sizeof(magic));
+    file.read((char *)&numImgs, sizeof(numImgs));
+
+    magic = this->convertBigEndian(magic);
+    numImgs = this->convertBigEndian(numImgs);
+
+    // print output for confirmation
+    std::cout << "Loading Labels: " << fileName << "\n";
+    std::cout << "Number of labels: " << numImgs << "\n";
+
+    for (int i = 0; i < numImgs; i++) {
+      unsigned char label = 0;
+      file.read((char *)&label, sizeof(label));
+      labels.push_back(label);
+    }
+  }
+}
+
+template <typename T> void Dataloader<T>::printImg() {
+  // TODO
+}

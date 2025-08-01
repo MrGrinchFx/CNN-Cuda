@@ -17,6 +17,7 @@ public:
   int getWidth() { return this->width; }
   Container<unsigned char> *getLabel() { return this->outputLabel.get(); }
   void printImg();
+  unsigned int convertBigEndian(unsigned int i);
 
 private:
   void readImgs(std::string fileName, std::vector<std::vector<T>> &images);
