@@ -16,19 +16,21 @@ file(REMOVE_RECURSE
   "CMakeFiles/NeuralNetProject.dir/Layers/maxPool.cu.o.d"
   "CMakeFiles/NeuralNetProject.dir/Layers/nllLoss.cu.o"
   "CMakeFiles/NeuralNetProject.dir/Layers/nllLoss.cu.o.d"
+  "CMakeFiles/NeuralNetProject.dir/Layers/operators.cu.o"
+  "CMakeFiles/NeuralNetProject.dir/Layers/operators.cu.o.d"
   "CMakeFiles/NeuralNetProject.dir/Layers/relu.cu.o"
   "CMakeFiles/NeuralNetProject.dir/Layers/relu.cu.o.d"
   "CMakeFiles/NeuralNetProject.dir/Layers/softmax.cu.o"
   "CMakeFiles/NeuralNetProject.dir/Layers/softmax.cu.o.d"
-  "CMakeFiles/NeuralNetProject.dir/main.cpp.o"
-  "CMakeFiles/NeuralNetProject.dir/main.cpp.o.d"
-  "CMakeFiles/NeuralNetProject.dir/neuralnet.cpp.o"
-  "CMakeFiles/NeuralNetProject.dir/neuralnet.cpp.o.d"
+  "CMakeFiles/NeuralNetProject.dir/main.cu.o"
+  "CMakeFiles/NeuralNetProject.dir/main.cu.o.d"
+  "CMakeFiles/NeuralNetProject.dir/neuralnet.cu.o"
+  "CMakeFiles/NeuralNetProject.dir/neuralnet.cu.o.d"
   "NeuralNetProject"
   "NeuralNetProject.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CUDA CXX)
+foreach(lang CUDA)
   include(CMakeFiles/NeuralNetProject.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

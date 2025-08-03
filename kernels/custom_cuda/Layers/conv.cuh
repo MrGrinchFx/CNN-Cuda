@@ -1,26 +1,23 @@
-#include "layers.hpp"
+#include "../Data/container.cuh"
+#include "layers.cuh"
 #include <unordered_map>
 template <typename T> class Conv : Layer<T> {
 public:
-  explicit Conv<T>(int _inputChannels, int _outputChannels, int _kernelSize,
-                   int _padding, int _stride)
-      : inputChannels(_inputChannels), outputChannels(_outputChannels),
-        kernelHeight(_kernelSize), kernelWidth(_kernelSize),
-        paddingHeight(_padding), paddingWidth(_padding), strideHeight(_stride),
-        strideWidth(_stride) {}
+  Conv(int inputChannels, int outputChannels, int kernelSize, int padding,
+       int stride);
   void forward();
   void backward();
 
-  std::vector<std::pair<Storage *, Storage *>> parameters;
+  std::vector<std::pair<Container<T> *, Container<T> *>> parameters;
 
 private:
-  std::unique_ptr<Storage> filters;
-  std::unique_ptr<Storage> filterGrad;
-  std::unique_ptr<Storage> bias;
-  std::unique_ptr<Storage> biasGrad;
-  std::unique_ptr<Storage> cols;
+  std::unique_ptr<Container<T>> filters;
+  std::unique_ptr<Container<T>> filterGrad;
+  std::unique_ptr<Container<T>> bias;
+  std::unique_ptr<Container<T>> biasGrad;
+  std::unique_ptr<Container<T>> cols;
 
-  std::unordered_map<std::string, std::unique_ptr<Storage>> temp;
+  std::unordered_map<std::string, std::unique_ptr<Container<T>>> temp;
   int inputChannels;
   int outputChannels;
   int kernelHeight;

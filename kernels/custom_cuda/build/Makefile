@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda
+CMAKE_SOURCE_DIR = /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build
+CMAKE_BINARY_DIR = /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build/CMakeFiles /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/CMakeFiles /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -321,6 +321,30 @@ Layers/nllLoss.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/Layers/nllLoss.cu.s
 .PHONY : Layers/nllLoss.cu.s
 
+Layers/operators.o: Layers/operators.cu.o
+.PHONY : Layers/operators.o
+
+# target to build an object file
+Layers/operators.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/Layers/operators.cu.o
+.PHONY : Layers/operators.cu.o
+
+Layers/operators.i: Layers/operators.cu.i
+.PHONY : Layers/operators.i
+
+# target to preprocess a source file
+Layers/operators.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/Layers/operators.cu.i
+.PHONY : Layers/operators.cu.i
+
+Layers/operators.s: Layers/operators.cu.s
+.PHONY : Layers/operators.s
+
+# target to generate assembly for a file
+Layers/operators.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/Layers/operators.cu.s
+.PHONY : Layers/operators.cu.s
+
 Layers/relu.o: Layers/relu.cu.o
 .PHONY : Layers/relu.o
 
@@ -369,53 +393,53 @@ Layers/softmax.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/Layers/softmax.cu.s
 .PHONY : Layers/softmax.cu.s
 
-main.o: main.cpp.o
+main.o: main.cu.o
 .PHONY : main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/main.cpp.o
-.PHONY : main.cpp.o
+main.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/main.cu.o
+.PHONY : main.cu.o
 
-main.i: main.cpp.i
+main.i: main.cu.i
 .PHONY : main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/main.cpp.i
-.PHONY : main.cpp.i
+main.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/main.cu.i
+.PHONY : main.cu.i
 
-main.s: main.cpp.s
+main.s: main.cu.s
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/main.cpp.s
-.PHONY : main.cpp.s
+main.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/main.cu.s
+.PHONY : main.cu.s
 
-neuralnet.o: neuralnet.cpp.o
+neuralnet.o: neuralnet.cu.o
 .PHONY : neuralnet.o
 
 # target to build an object file
-neuralnet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/neuralnet.cpp.o
-.PHONY : neuralnet.cpp.o
+neuralnet.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/neuralnet.cu.o
+.PHONY : neuralnet.cu.o
 
-neuralnet.i: neuralnet.cpp.i
+neuralnet.i: neuralnet.cu.i
 .PHONY : neuralnet.i
 
 # target to preprocess a source file
-neuralnet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/neuralnet.cpp.i
-.PHONY : neuralnet.cpp.i
+neuralnet.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/neuralnet.cu.i
+.PHONY : neuralnet.cu.i
 
-neuralnet.s: neuralnet.cpp.s
+neuralnet.s: neuralnet.cu.s
 .PHONY : neuralnet.s
 
 # target to generate assembly for a file
-neuralnet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/neuralnet.cpp.s
-.PHONY : neuralnet.cpp.s
+neuralnet.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/neuralnet.cu.s
+.PHONY : neuralnet.cu.s
 
 # Help Target
 help:
@@ -450,6 +474,9 @@ help:
 	@echo "... Layers/nllLoss.o"
 	@echo "... Layers/nllLoss.i"
 	@echo "... Layers/nllLoss.s"
+	@echo "... Layers/operators.o"
+	@echo "... Layers/operators.i"
+	@echo "... Layers/operators.s"
 	@echo "... Layers/relu.o"
 	@echo "... Layers/relu.i"
 	@echo "... Layers/relu.s"

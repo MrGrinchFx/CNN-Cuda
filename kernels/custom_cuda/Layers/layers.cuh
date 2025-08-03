@@ -18,11 +18,11 @@ public:
     return nextLayer;
   }
 
-  virtual void forward() = 0;
-  virtual void backward() = 0;
-  virtual std::vector<std::pair<Container<T> *, Container<T> *>>
-  parameters() = 0;
-  virtual Container<T> *getGrad() = 0;
+  virtual void forward();
+  virtual void backward();
+  virtual std::vector<std::pair<Container<T> *, Container<T> *>> parameters();
+  virtual Container<T> *getGrad() { return this->grad.get(); };
+  virtual Container<T> *getOutput() { return this->outputs.get(); };
 
 private:
   Layer *next = nullptr;

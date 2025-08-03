@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda
+CMAKE_SOURCE_DIR = /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build
+CMAKE_BINARY_DIR = /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/NeuralNetProject.dir/clean
 CMakeFiles/NeuralNetProject.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target NeuralNetProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target NeuralNetProject"
 .PHONY : CMakeFiles/NeuralNetProject.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/NeuralNetProject.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/NeuralNetProject.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/CMakeFiles 0
 .PHONY : CMakeFiles/NeuralNetProject.dir/rule
 
 # Convenience name for target.
@@ -102,7 +102,7 @@ NeuralNetProject: CMakeFiles/NeuralNetProject.dir/rule
 # codegen rule for target.
 CMakeFiles/NeuralNetProject.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuralNetProject.dir/build.make CMakeFiles/NeuralNetProject.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Finished codegen for target NeuralNetProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Finished codegen for target NeuralNetProject"
 .PHONY : CMakeFiles/NeuralNetProject.dir/codegen
 
 # clean rule for target.

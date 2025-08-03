@@ -1,10 +1,10 @@
 
-#include "../utils.hpp"
 #include "bits/stdc++.h"
 #include "dataloader.cuh"
 #include "thrust/host_vector.h"
 #include "thrust/mr/allocator.h"
 #include "thrust/system/cuda/memory_resource.h"
+#include "utils.cuh"
 #include <chrono>
 #include <fstream>
 #include <random>
@@ -38,8 +38,7 @@ template <typename T> void Dataloader<T>::reset() {
 template <typename T> void Dataloader<T>::forward(int batchSize, bool isTrain) {
   if (isTrain) {
     int startIdx = trainIndex;
-    int endIdx = trainIndex + std::min(this->trainIndex + batchSize,
-                                       (int)this->trainData.size());
+    int endIdx = std::min(startIdx + batchSize, (int)this->trainData.size());
 
     this->trainIndex = endIdx;
     int size = endIdx - startIdx;
@@ -69,7 +68,7 @@ template <typename T> void Dataloader<T>::forward(int batchSize, bool isTrain) {
     // load each image and label in the batch to the allocated buffer.
     for (int i = startIdx; i < endIdx; i++) {
       trainDataBuffer.insert(trainDataBuffer.end(), this->trainData[i].begin(),
-                             this->trainData.end());
+                             this->trainData[i].end());
       this->outputLabel
           ->getData()[(i - startIdx) * labelStride + this->trainLabel[i]] = 1;
     }
@@ -77,7 +76,7 @@ template <typename T> void Dataloader<T>::forward(int batchSize, bool isTrain) {
     this->output->getData() = trainDataBuffer;
   } else {
     int startIdx = testIndex;
-    int endIdx = std::min(testIndex + batchSize, (int)this->testData.size());
+    int endIdx = std::min(startIdx + batchSize, (int)this->testData.size());
 
     this->testIndex = endIdx;
     int size = endIdx - startIdx;

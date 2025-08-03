@@ -1,4 +1,4 @@
-#include <conv.hpp>
+#include "conv.cuh"
 
 template <typename T>
 Conv<T>::Conv(int _inputChannels, int _outputChannels, int _kernelSize,
@@ -7,5 +7,5 @@ Conv<T>::Conv(int _inputChannels, int _outputChannels, int _kernelSize,
       kernelHeight(_kernelSize), kernelWidth(_kernelSize),
       paddingHeight(_padding), paddingWidth(_padding), strideHeight(_stride),
       strideWidth(_stride) {}
-template <typename T> Conv<T>::forward() {}
-template <typename T> Conv<T>::backward() {}
+template <typename T> void Conv<T>::forward() {}
+template <typename T> void Conv<T>::backward() {}

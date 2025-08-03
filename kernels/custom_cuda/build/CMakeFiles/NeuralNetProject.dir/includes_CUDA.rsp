@@ -1,1 +1,1 @@
--I"/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda" -I"/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Data" -I"/home/mrgrinch/coding/MLP-Cuda/kernels/custom_cuda/Layers"
+-I"/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda" -I"/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data" -I"/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers"

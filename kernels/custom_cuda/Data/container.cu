@@ -1,10 +1,10 @@
-#include "../utils.hpp"
+#include "../Layers/operators.cuh"
+#include "../utils.cuh"
 #include "container.cuh"
 #include <cmath>
 #include <curand.h>
 #include <curand_kernel.h>
 #include <vector>
-
 template <typename T>
 Container<T>::Container(const std::vector<int> &_shape) : shape(_shape) {
   int size = 1;
@@ -12,7 +12,7 @@ Container<T>::Container(const std::vector<int> &_shape) : shape(_shape) {
     size *= _shape[i];
   }
 
-  return this->data.resize(size);
+  this->data.resize(size);
 }
 
 template <typename T>
@@ -22,7 +22,7 @@ Container<T>::Container(const std::vector<int> &_shape, T value)
   for (int i = 0; i < _shape.size(); i++) {
     size *= _shape[i];
   }
-  return this->data.resize(size, value);
+  this->data.resize(size, value);
 }
 //
 template <typename T>
@@ -61,14 +61,6 @@ template <typename T> void Container<T>::resize(const std::vector<int> _shape) {
 
   if (size != this->data.size()) {
     this->data.resize(size);
-  }
-}
-
-__global__ void xavierKernel(float *a, int size, float scale, curandState *cs) {
-  int index = blockIdx.x * blockDim.x + threadIdx.x;
-  if (index < size) {
-    curand_init(1234, index, 0, &cs[index]);
-    a[index] = (curand_uniform(&cs[index]) * 2 - 1) * scale;
   }
 }
 

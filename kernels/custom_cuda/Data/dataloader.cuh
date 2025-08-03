@@ -9,7 +9,7 @@
 
 template <typename T> class Dataloader : public Layer<T> {
 public:
-  Dataloader(std::string dataPath, bool shuffle);
+  Dataloader(std::string dataPath, bool shuffle = true);
   void forward(int batchSize, bool isTrain);
   bool nextBatchIsHere(bool isTrain);
   void reset();

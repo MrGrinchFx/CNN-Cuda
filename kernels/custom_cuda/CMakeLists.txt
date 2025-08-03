@@ -19,21 +19,22 @@ set(CMAKE_CXX_EXTENSIONS OFF) # Prefer standard-compliant C++
 
 # --- Source Files ---
 # Add your C++ source files
-set(CXX_SOURCES
-    main.cpp
-    neuralnet.cpp
-)
+#set(CXX_SOURCES
+#    main.cpp
+#    neuralnet.cpp
+#)
 
 # Find all .cu and .cuh files in Data and Layers directories
 # glob_recursive is useful here if you have subdirectories within Data/Layers
 file(GLOB_RECURSE CUDA_SOURCES
     Data/*.cu
     Layers/*.cu
+    main.cu
+    neuralnet.cu
 )
 
 # Combine all source files
 set(ALL_SOURCES
-    ${CXX_SOURCES}
     ${CUDA_SOURCES}
 )
 
@@ -61,3 +62,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 # Link against the CUDA runtime library. This is crucial.
 # Using CUDA_LIBRARIES variable as a fallback, which is set by the CUDA language module.
 target_link_libraries(${PROJECT_NAME} PRIVATE ${CUDA_LIBRARIES})
+
