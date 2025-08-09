@@ -2,8 +2,8 @@
 #include "optimizer.cuh"
 
 template <typename T>
-void sgdUpdate(Container<T> *weights, const Container<T> *grads,
-               float learning_rate = 1e-2, float l2 = 1e-3, float beta = 0.99);
+void sgdFunction(Container<T> *weights, const Container<T> *grads,
+                 float learning_rate = 1e-2, float l2 = 1e-3);
 
 template <typename T> class SGD : public Optimizer<T> {
 public:
