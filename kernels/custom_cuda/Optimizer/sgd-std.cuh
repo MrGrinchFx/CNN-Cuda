@@ -7,10 +7,10 @@ void sgdFunction(Container<T> *weights, const Container<T> *grads,
 
 template <typename T> class SGD : public Optimizer<T> {
 public:
-  explicit SGD(float learningRate = 1e-2, float l2 = 1e-3, float beta = 0.99)
-      : learningRate(learningRate), l2(l2), beta(beta) {
+  explicit SGD(float learningRate = 1e-2, float l2 = 1e-3)
+      : learningRate(learningRate), l2(l2) {
     std::cout << "Learning Rate: " << learningRate << ", l2: " << l2
-              << ", Beta: " << beta << std::endl;
+              << std::endl;
   }
 
   void reg(std::vector<std::pair<Container<T> *, Container<T> *>> params);
