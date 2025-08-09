@@ -1,4 +1,5 @@
 #include "../Data/container.cuh"
+#include "../utils.cuh"
 #include <curand.h>
 #include <curand_kernel.h>
 
@@ -12,3 +13,12 @@ void __global__ matMulKernel(const T *input1, const T *input2, T *output,
 
 template <typename T>
 void __global__ xavierKernel(T *a, int size, float scale, curandState *cs);
+
+template <typename T>
+__global__ void operatorSumKernel(const T *inputPtr, T *outputPtr,
+                                  const int *inputShapePtr, int *tempShapePtr,
+                                  int inputDims, int dim, int dimStride,
+                                  int size);
+template <typename T>
+void operatorSum(const Container<T> *input, int dim,
+                 const Container<T> *output);

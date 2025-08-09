@@ -20,13 +20,19 @@ public:
 
   virtual void forward();
   virtual void backward();
-  virtual std::vector<std::pair<Container<T> *, Container<T> *>> parameters();
+  virtual std::vector<std::pair<Container<T> *, Container<T> *>>
+  getParameters();
   virtual Container<T> *getGrad() { return this->grad.get(); };
-  virtual Container<T> *getOutput() { return this->outputs.get(); };
+  virtual Container<T> *getOutput() { return this->output.get(); };
 
 private:
   Layer *next = nullptr;
   Layer *prev = nullptr;
+
+  // a neighbor layer would call next->getGrad() to retrieve grad information
+  // for the backward prop
   std::unique_ptr<Container<T>> grad;
-  std::unique_ptr<Container<T>> outputs;
+  // a neigbor layer would call prev->getOutput() to retrieve output information
+  // for the forward prop
+  std::unique_ptr<Container<T>> output;
 };

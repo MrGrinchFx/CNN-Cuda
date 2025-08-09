@@ -25,7 +25,7 @@ int main() {
   myModel->addLinear(14 * 14 * 64, 1024);
   myModel->addRelu(1024);
   myModel->addLinear(1024, 10);
-  myModel->train(100);
+  myModel->train();
   myModel->printResults();
 
   return 0;

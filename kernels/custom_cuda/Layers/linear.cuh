@@ -39,7 +39,7 @@ private:
   std::unique_ptr<Container<T>> bias;
   std::unique_ptr<Container<T>> biasGrads;
 
-  std::unordered_map<std::string, std::unique_ptr<Container<T>>> temp;
+  std::unordered_map<std::string, std::unique_ptr<Container<T>>> transpose;
 
   int inputChannels;
   int outputChannels;

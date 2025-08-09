@@ -18,7 +18,7 @@ public:
   }
 
   std::vector<Layer<T>> getLayersVector() { return layersVector; }
-  void train(int trainIterations) {
+  void train() {
     while (1) { // main loops
       for (int fwd = 0; fwd < layersVector.size(); fwd++) {
         // TODO
