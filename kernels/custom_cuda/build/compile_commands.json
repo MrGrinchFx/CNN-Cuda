@@ -76,5 +76,89 @@
   "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetProject.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/neuralnet.cu -o CMakeFiles/NeuralNetProject.dir/neuralnet.cu.o",
   "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/neuralnet.cu",
   "output": "CMakeFiles/NeuralNetProject.dir/neuralnet.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/SGD_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/SGD_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/SGD_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/SGD_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/container_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/container_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/container_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/container_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/conv_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/conv_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/conv_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/conv_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/entropy_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/entropy_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/entropy_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/entropy_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/linear_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/linear_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/linear_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/linear_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/main_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/main_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/main_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/main_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/maxpool_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/maxpool_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/maxpool_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/maxpool_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/operators_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/operators_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/operators_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/operators_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/relu_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/relu_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/relu_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/relu_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build",
+  "command": "/usr/local/cuda-12.9/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/usr/bin/g++-14  --options-file CMakeFiles/NeuralNetTests.dir/includes_CUDA.rsp -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/softmax_test.cu -o CMakeFiles/NeuralNetTests.dir/tests/softmax_test.cu.o",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/tests/softmax_test.cu",
+  "output": "CMakeFiles/NeuralNetTests.dir/tests/softmax_test.cu.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/g++-14  -I/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googlemock/include -I/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googlemock -isystem /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest/include -isystem /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/g++-14  -isystem /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googlemock/include -isystem /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googlemock -isystem /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest/include -isystem /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/g++-14  -I/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest/include -I/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/g++-14  -isystem /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest/include -isystem /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest -std=c++17 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
 }
 ]

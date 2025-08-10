@@ -1,0 +1,5 @@
+if(EXISTS "/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/NeuralNetTests[1]_tests.cmake")
+  include("/home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/build/NeuralNetTests[1]_tests.cmake")
+else()
+  add_test(NeuralNetTests_NOT_BUILT NeuralNetTests_NOT_BUILT)
+endif()

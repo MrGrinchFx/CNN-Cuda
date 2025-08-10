@@ -23,7 +23,7 @@ void linearFwdBiasOp(const Container<T> *inputs, const Container<T> *biases,
 template <typename T>
 void linearBwdBiasOp(const Container<T> *outputGrad, Container<T> *biasesGrad);
 
-template <typename T> class Linear : Layer<T> {
+template <typename T> class Linear : public Layer<T> {
 public:
   explicit Linear(int inputChannels, int outputChannels);
   void forward();

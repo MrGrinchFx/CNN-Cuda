@@ -1371,6 +1371,7 @@ CMakeFiles/NeuralNetProject.dir/main.cu.o : /home/mrgrinch/coding/CNN-Cuda/kerne
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/mr/new.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cpp/pointer.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cuda/pointer.h \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../Data/../Layers/../utils.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_kernel.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_discrete.h \
@@ -1387,7 +1388,6 @@ CMakeFiles/NeuralNetProject.dir/main.cu.o : /home/mrgrinch/coding/CNN-Cuda/kerne
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_lognormal.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_poisson.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_discrete2.h \
-    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../Data/../utils.cuh \
     /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/neuralnet.cu \
     /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/conv.cuh \
     /usr/include/c++/14/unordered_map \
@@ -1396,9 +1396,12 @@ CMakeFiles/NeuralNetProject.dir/main.cu.o : /home/mrgrinch/coding/CNN-Cuda/kerne
     /usr/include/c++/14/bits/hashtable_policy.h \
     /usr/include/c++/14/bits/node_handle.h \
     /usr/include/c++/14/bits/erase_if.h \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/flatten.cuh \
     /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/linear.cuh \
     /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/maxPool.cuh \
     /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/relu.cuh \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Optimizer/sgd-std.cuh \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Optimizer/optimizer.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__thread/threading_support_pthread.h \
     /usr/include/semaphore.h \
     /usr/include/bits/semaphore.h \

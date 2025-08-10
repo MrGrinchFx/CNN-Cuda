@@ -2,7 +2,6 @@
 #include "../utils.cuh"
 #include "linear.cuh"
 #include "operators.cuh"
-#include <__clang_cuda_builtin_vars.h>
 #include <thrust/fill.h>
 template <typename T> Linear<T>::Linear(int inputChannels, int outputChannels) {
 

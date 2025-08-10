@@ -1,5 +1,6 @@
 #include "Data/dataloader.cuh"
 #include "Layers/conv.cuh"
+#include "Layers/flatten.cuh"
 #include "Layers/layers.cuh"
 #include "Layers/linear.cuh"
 #include "Layers/maxPool.cuh"
@@ -19,7 +20,7 @@ public:
   }
 
   std::vector<Layer<T>> getLayersVector() { return layersVector; }
-  void train(int trainIterations, float learningRate, float l2) {
+  void train(float learningRate, float l2) {
     // connect the layers via pointers
     connectLayers();
     // setup the optimizer with the parameters it needs to tune
@@ -51,7 +52,7 @@ public:
   std::vector<std::pair<Container<T> *, Container<T> *>> getAllParameters() {
     std::vector<std::pair<Container<T> *, Container<T> *>> allParams;
     for (const auto &layer : layersVector) {
-      auto params = layer->parameters(); // a method each layer has
+      auto params = layer->getParameters(); // a method each layer has
       if (!params.empty()) {
         allParams.insert(allParams.end(), params.begin(), params.end());
       }
@@ -77,7 +78,7 @@ public:
   }
 
   void addMaxPool(int kernelSize, int stride) {
-    layersVector.push_back(std::make_unique<Maxpool<T>>(kernelSize, stride));
+    layersVector.push_back(std::make_unique<MaxPool<T>>(kernelSize, stride));
   }
 
   // void addBatchNorm(int numFeatures) {

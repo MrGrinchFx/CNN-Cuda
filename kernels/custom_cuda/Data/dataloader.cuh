@@ -9,8 +9,8 @@
 
 template <typename T> class Dataloader : public Layer<T> {
 public:
-  Dataloader(std::string dataPath, bool shuffle = true);
-  void forward(int batchSize, bool isTrain);
+  Dataloader(std::string dataPath, bool shuffle = true, int batchSize = 64);
+  void forward();
   bool nextBatchIsHere(bool isTrain);
   void reset();
   int getHeight() { return this->height; }
@@ -32,6 +32,7 @@ private:
   int height;
   int width;
   bool shuffle;
+  bool isTrain;
   std::unique_ptr<Container<unsigned char>> outputLabel;
   std::unique_ptr<Container<T>> output;
 };

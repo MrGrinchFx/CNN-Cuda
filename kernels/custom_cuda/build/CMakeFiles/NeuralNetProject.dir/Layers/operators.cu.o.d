@@ -1368,6 +1368,7 @@ CMakeFiles/NeuralNetProject.dir/Layers/operators.cu.o : /home/mrgrinch/coding/CN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/mr/new.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cpp/pointer.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cuda/pointer.h \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/../utils.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_kernel.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_discrete.h \

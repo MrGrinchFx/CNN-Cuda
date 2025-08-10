@@ -1368,6 +1368,7 @@ CMakeFiles/NeuralNetProject.dir/Data/container.cu.o : /home/mrgrinch/coding/CNN-
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/mr/new.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cpp/pointer.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cuda/pointer.h \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../utils.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_kernel.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_discrete.h \
@@ -1384,7 +1385,6 @@ CMakeFiles/NeuralNetProject.dir/Data/container.cu.o : /home/mrgrinch/coding/CNN-
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_lognormal.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_poisson.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_discrete2.h \
-    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../utils.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__thread/threading_support_pthread.h \
     /usr/include/semaphore.h \
     /usr/include/bits/semaphore.h \

@@ -188,315 +188,7 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/include/c++/14/utility \
     /usr/include/c++/14/bits/stl_relops.h \
     /usr/include/c++/14/initializer_list \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/stdc++.h \
-    /usr/include/c++/14/cassert \
-    /usr/include/c++/14/cctype \
-    /usr/include/c++/14/cfloat \
-    /usr/lib/gcc/x86_64-redhat-linux/14/include/float.h \
-    /usr/include/c++/14/ciso646 \
-    /usr/include/c++/14/climits \
-    /usr/include/c++/14/csetjmp \
-    /usr/include/setjmp.h \
-    /usr/include/bits/setjmp.h \
-    /usr/include/bits/types/struct___jmp_buf_tag.h \
-    /usr/include/c++/14/cstdarg \
-    /usr/include/c++/14/cstddef \
-    /usr/include/c++/14/cstdint \
-    /usr/lib/gcc/x86_64-redhat-linux/14/include/stdint.h \
-    /usr/include/stdint.h \
-    /usr/include/bits/wchar.h \
-    /usr/include/bits/stdint-uintn.h \
-    /usr/include/bits/stdint-least.h \
-    /usr/include/c++/14/algorithm \
-    /usr/include/c++/14/bits/stl_algo.h \
-    /usr/include/c++/14/bits/algorithmfwd.h \
-    /usr/include/c++/14/bits/stl_heap.h \
-    /usr/include/c++/14/bits/uniform_int_dist.h \
-    /usr/include/c++/14/bits/stl_tempbuf.h \
-    /usr/include/c++/14/bits/stl_construct.h \
-    /usr/include/c++/14/pstl/glue_algorithm_defs.h \
-    /usr/include/c++/14/pstl/execution_defs.h \
-    /usr/include/c++/14/bitset \
-    /usr/include/c++/14/string \
-    /usr/include/c++/14/bits/stringfwd.h \
-    /usr/include/c++/14/bits/memoryfwd.h \
-    /usr/include/c++/14/bits/char_traits.h \
-    /usr/include/c++/14/bits/postypes.h \
-    /usr/include/c++/14/cwchar \
-    /usr/include/wchar.h \
-    /usr/include/bits/types/wint_t.h \
-    /usr/include/bits/types/mbstate_t.h \
-    /usr/include/c++/14/bits/allocator.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/c++allocator.h \
-    /usr/include/c++/14/bits/new_allocator.h \
-    /usr/include/c++/14/bits/localefwd.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/c++locale.h \
-    /usr/include/c++/14/clocale \
-    /usr/include/locale.h \
-    /usr/include/bits/locale.h \
-    /usr/include/c++/14/iosfwd \
-    /usr/include/c++/14/bits/ostream_insert.h \
-    /usr/include/c++/14/bits/cxxabi_forced.h \
-    /usr/include/c++/14/bits/stl_function.h \
-    /usr/include/c++/14/backward/binders.h \
-    /usr/include/c++/14/bits/refwrap.h \
-    /usr/include/c++/14/bits/invoke.h \
-    /usr/include/c++/14/bits/range_access.h \
-    /usr/include/c++/14/bits/basic_string.h \
-    /usr/include/c++/14/ext/alloc_traits.h \
-    /usr/include/c++/14/bits/alloc_traits.h \
-    /usr/include/c++/14/string_view \
-    /usr/include/c++/14/bits/functional_hash.h \
-    /usr/include/c++/14/bits/hash_bytes.h \
-    /usr/include/c++/14/bits/string_view.tcc \
-    /usr/include/c++/14/ext/string_conversions.h \
-    /usr/include/c++/14/cstdio \
-    /usr/include/c++/14/cerrno \
-    /usr/include/errno.h \
-    /usr/include/bits/errno.h \
-    /usr/include/linux/errno.h \
-    /usr/include/asm/errno.h \
-    /usr/include/asm-generic/errno.h \
-    /usr/include/asm-generic/errno-base.h \
-    /usr/include/bits/types/error_t.h \
-    /usr/include/c++/14/bits/charconv.h \
-    /usr/include/c++/14/bits/basic_string.tcc \
-    /usr/include/c++/14/bits/memory_resource.h \
-    /usr/include/c++/14/bits/uses_allocator.h \
-    /usr/include/c++/14/bits/uses_allocator_args.h \
-    /usr/include/c++/14/tuple \
-    /usr/include/c++/14/functional \
-    /usr/include/c++/14/bits/std_function.h \
-    /usr/include/c++/14/typeinfo \
-    /usr/include/c++/14/unordered_map \
-    /usr/include/c++/14/bits/unordered_map.h \
-    /usr/include/c++/14/bits/hashtable.h \
-    /usr/include/c++/14/bits/hashtable_policy.h \
-    /usr/include/c++/14/ext/aligned_buffer.h \
-    /usr/include/c++/14/bits/enable_special_members.h \
-    /usr/include/c++/14/bits/node_handle.h \
-    /usr/include/c++/14/bits/erase_if.h \
-    /usr/include/c++/14/vector \
-    /usr/include/c++/14/bits/stl_uninitialized.h \
-    /usr/include/c++/14/bits/stl_vector.h \
-    /usr/include/c++/14/bits/stl_bvector.h \
-    /usr/include/c++/14/bits/vector.tcc \
-    /usr/include/c++/14/array \
-    /usr/include/c++/14/compare \
-    /usr/include/c++/14/iterator \
-    /usr/include/c++/14/bits/stream_iterator.h \
-    /usr/include/c++/14/bits/streambuf_iterator.h \
-    /usr/include/c++/14/streambuf \
-    /usr/include/c++/14/bits/ios_base.h \
-    /usr/include/c++/14/ext/atomicity.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/gthr.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/gthr-default.h \
-    /usr/include/pthread.h \
-    /usr/include/sched.h \
-    /usr/include/bits/sched.h \
-    /usr/include/linux/sched/types.h \
-    /usr/include/linux/types.h \
-    /usr/include/asm/types.h \
-    /usr/include/asm-generic/types.h \
-    /usr/include/asm-generic/int-ll64.h \
-    /usr/include/asm/bitsperlong.h \
-    /usr/include/asm-generic/bitsperlong.h \
-    /usr/include/linux/posix_types.h \
-    /usr/include/linux/stddef.h \
-    /usr/include/asm/posix_types.h \
-    /usr/include/asm/posix_types_64.h \
-    /usr/include/asm-generic/posix_types.h \
-    /usr/include/bits/types/struct_sched_param.h \
-    /usr/include/bits/cpu-set.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
-    /usr/include/sys/single_threaded.h \
-    /usr/include/c++/14/bits/locale_classes.h \
-    /usr/include/c++/14/bits/locale_classes.tcc \
-    /usr/include/c++/14/system_error \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/error_constants.h \
-    /usr/include/c++/14/stdexcept \
-    /usr/include/c++/14/exception \
-    /usr/include/c++/14/bits/exception_ptr.h \
-    /usr/include/c++/14/bits/cxxabi_init_exception.h \
-    /usr/include/c++/14/bits/nested_exception.h \
-    /usr/include/c++/14/bits/streambuf.tcc \
-    /usr/include/c++/14/memory \
-    /usr/include/c++/14/bits/stl_raw_storage_iter.h \
-    /usr/include/c++/14/bits/align.h \
-    /usr/include/c++/14/bits/unique_ptr.h \
-    /usr/include/c++/14/bits/shared_ptr.h \
-    /usr/include/c++/14/bits/shared_ptr_base.h \
-    /usr/include/c++/14/bits/allocated_ptr.h \
-    /usr/include/c++/14/ext/concurrence.h \
-    /usr/include/c++/14/bits/shared_ptr_atomic.h \
-    /usr/include/c++/14/bits/atomic_base.h \
-    /usr/include/c++/14/bits/atomic_lockfree_defines.h \
-    /usr/include/c++/14/backward/auto_ptr.h \
-    /usr/include/c++/14/pstl/glue_memory_defs.h \
-    /usr/include/c++/14/numeric \
-    /usr/include/c++/14/bits/stl_numeric.h \
-    /usr/include/c++/14/pstl/glue_numeric_defs.h \
-    /usr/include/c++/14/atomic \
-    /usr/include/c++/14/ratio \
-    /usr/include/c++/14/scoped_allocator \
-    /usr/include/c++/14/typeindex \
-    /usr/include/c++/14/any \
-    /usr/include/c++/14/optional \
-    /usr/include/c++/14/variant \
-    /usr/include/c++/14/bits/parse_numbers.h \
-    /usr/include/c++/14/csignal \
-    /usr/include/signal.h \
-    /usr/include/bits/signum-generic.h \
-    /usr/include/bits/signum-arch.h \
-    /usr/include/bits/types/sig_atomic_t.h \
-    /usr/include/bits/types/siginfo_t.h \
-    /usr/include/bits/types/__sigval_t.h \
-    /usr/include/bits/siginfo-arch.h \
-    /usr/include/bits/siginfo-consts.h \
-    /usr/include/bits/siginfo-consts-arch.h \
-    /usr/include/bits/types/sigval_t.h \
-    /usr/include/bits/types/sigevent_t.h \
-    /usr/include/bits/sigevent-consts.h \
-    /usr/include/bits/sigaction.h \
-    /usr/include/bits/sigcontext.h \
-    /usr/include/bits/types/stack_t.h \
-    /usr/include/sys/ucontext.h \
-    /usr/include/bits/sigstack.h \
-    /usr/include/bits/sigstksz.h \
-    /usr/include/unistd.h \
-    /usr/include/bits/posix_opt.h \
-    /usr/include/bits/environments.h \
-    /usr/include/bits/confname.h \
-    /usr/include/bits/getopt_posix.h \
-    /usr/include/bits/getopt_core.h \
-    /usr/include/bits/unistd_ext.h \
-    /usr/include/linux/close_range.h \
-    /usr/include/bits/ss_flags.h \
-    /usr/include/bits/types/struct_sigstack.h \
-    /usr/include/bits/sigthread.h \
-    /usr/include/bits/signal_ext.h \
-    /usr/include/c++/14/cstring \
-    /usr/include/c++/14/ctime \
-    /usr/include/c++/14/cwctype \
-    /usr/include/wctype.h \
-    /usr/include/bits/wctype-wchar.h \
-    /usr/include/c++/14/ccomplex \
-    /usr/include/c++/14/complex \
-    /usr/include/c++/14/sstream \
-    /usr/include/c++/14/istream \
-    /usr/include/c++/14/ios \
-    /usr/include/c++/14/bits/basic_ios.h \
-    /usr/include/c++/14/bits/locale_facets.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/ctype_base.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/ctype_inline.h \
-    /usr/include/c++/14/bits/locale_facets.tcc \
-    /usr/include/c++/14/bits/basic_ios.tcc \
-    /usr/include/c++/14/ostream \
-    /usr/include/c++/14/bits/ostream.tcc \
-    /usr/include/c++/14/bits/istream.tcc \
-    /usr/include/c++/14/bits/sstream.tcc \
-    /usr/include/c++/14/cfenv \
-    /usr/include/c++/14/fenv.h \
-    /usr/include/fenv.h \
-    /usr/include/bits/fenv.h \
-    /usr/include/c++/14/cinttypes \
-    /usr/include/inttypes.h \
-    /usr/include/c++/14/cstdalign \
-    /usr/lib/gcc/x86_64-redhat-linux/14/include/stdalign.h \
-    /usr/include/c++/14/cstdbool \
-    /usr/lib/gcc/x86_64-redhat-linux/14/include/stdbool.h \
-    /usr/include/c++/14/ctgmath \
-    /usr/include/c++/14/cuchar \
-    /usr/include/uchar.h \
-    /usr/include/c++/14/deque \
-    /usr/include/c++/14/bits/stl_deque.h \
-    /usr/include/c++/14/bits/deque.tcc \
-    /usr/include/c++/14/fstream \
-    /usr/include/c++/14/bits/codecvt.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/c++io.h \
-    /usr/include/c++/14/bits/fstream.tcc \
-    /usr/include/c++/14/iomanip \
-    /usr/include/c++/14/locale \
-    /usr/include/c++/14/bits/locale_facets_nonio.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/time_members.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/messages_members.h \
-    /usr/include/libintl.h \
-    /usr/include/c++/14/bits/locale_facets_nonio.tcc \
-    /usr/include/c++/14/bits/locale_conv.h \
-    /usr/include/c++/14/bits/quoted_string.h \
-    /usr/include/c++/14/iostream \
-    /usr/include/c++/14/list \
-    /usr/include/c++/14/bits/stl_list.h \
-    /usr/include/c++/14/bits/list.tcc \
-    /usr/include/c++/14/map \
-    /usr/include/c++/14/bits/stl_tree.h \
-    /usr/include/c++/14/bits/stl_map.h \
-    /usr/include/c++/14/bits/stl_multimap.h \
-    /usr/include/c++/14/queue \
-    /usr/include/c++/14/bits/stl_queue.h \
-    /usr/include/c++/14/set \
-    /usr/include/c++/14/bits/stl_set.h \
-    /usr/include/c++/14/bits/stl_multiset.h \
-    /usr/include/c++/14/stack \
-    /usr/include/c++/14/bits/stl_stack.h \
-    /usr/include/c++/14/valarray \
-    /usr/include/c++/14/bits/valarray_array.h \
-    /usr/include/c++/14/bits/valarray_array.tcc \
-    /usr/include/c++/14/bits/valarray_before.h \
-    /usr/include/c++/14/bits/slice_array.h \
-    /usr/include/c++/14/bits/valarray_after.h \
-    /usr/include/c++/14/bits/gslice.h \
-    /usr/include/c++/14/bits/gslice_array.h \
-    /usr/include/c++/14/bits/mask_array.h \
-    /usr/include/c++/14/bits/indirect_array.h \
-    /usr/include/c++/14/chrono \
-    /usr/include/c++/14/bits/chrono.h \
-    /usr/include/c++/14/codecvt \
-    /usr/include/c++/14/condition_variable \
-    /usr/include/c++/14/bits/std_mutex.h \
-    /usr/include/c++/14/bits/unique_lock.h \
-    /usr/include/c++/14/forward_list \
-    /usr/include/c++/14/bits/forward_list.h \
-    /usr/include/c++/14/bits/forward_list.tcc \
-    /usr/include/c++/14/future \
-    /usr/include/c++/14/mutex \
-    /usr/include/c++/14/bits/atomic_futex.h \
-    /usr/include/c++/14/bits/std_thread.h \
-    /usr/include/c++/14/random \
-    /usr/include/c++/14/bits/random.h \
-    /usr/include/c++/14/x86_64-redhat-linux/bits/opt_random.h \
-    /usr/include/c++/14/bits/random.tcc \
-    /usr/include/c++/14/regex \
-    /usr/include/c++/14/bits/regex_constants.h \
-    /usr/include/c++/14/bits/regex_error.h \
-    /usr/include/c++/14/bits/regex_automaton.h \
-    /usr/include/c++/14/bits/regex_automaton.tcc \
-    /usr/include/c++/14/bits/regex_scanner.h \
-    /usr/include/c++/14/bits/regex_scanner.tcc \
-    /usr/include/c++/14/bits/regex_compiler.h \
-    /usr/include/c++/14/bits/regex_compiler.tcc \
-    /usr/include/c++/14/bits/regex.h \
-    /usr/include/c++/14/bits/regex.tcc \
-    /usr/include/c++/14/bits/regex_executor.h \
-    /usr/include/c++/14/bits/regex_executor.tcc \
-    /usr/include/c++/14/thread \
-    /usr/include/c++/14/bits/this_thread_sleep.h \
-    /usr/include/c++/14/unordered_set \
-    /usr/include/c++/14/bits/unordered_set.h \
-    /usr/include/c++/14/shared_mutex \
-    /usr/include/c++/14/charconv \
-    /usr/include/c++/14/filesystem \
-    /usr/include/c++/14/bits/fs_fwd.h \
-    /usr/include/c++/14/bits/fs_path.h \
-    /usr/include/c++/14/bits/fs_dir.h \
-    /usr/include/c++/14/bits/fs_ops.h \
-    /usr/include/c++/14/memory_resource \
-    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/dataloader.cuh \
-    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/layers.cuh \
-    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../Data/container.cu \
-    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../Data/../Layers/operators.cuh \
-    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../Data/../Layers/../Data/container.cuh \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../utils.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/device_vector.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/config.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/config/config.h \
@@ -545,6 +237,79 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/contiguous_storage.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/allocator/allocator_traits.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/memory_wrapper.h \
+    /usr/include/c++/14/memory \
+    /usr/include/c++/14/bits/memoryfwd.h \
+    /usr/include/c++/14/bits/allocator.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/c++allocator.h \
+    /usr/include/c++/14/bits/new_allocator.h \
+    /usr/include/c++/14/bits/stl_tempbuf.h \
+    /usr/include/c++/14/bits/stl_construct.h \
+    /usr/include/c++/14/bits/stl_uninitialized.h \
+    /usr/include/c++/14/ext/alloc_traits.h \
+    /usr/include/c++/14/bits/alloc_traits.h \
+    /usr/include/c++/14/bits/stl_raw_storage_iter.h \
+    /usr/include/c++/14/bits/align.h \
+    /usr/lib/gcc/x86_64-redhat-linux/14/include/stdint.h \
+    /usr/include/stdint.h \
+    /usr/include/bits/wchar.h \
+    /usr/include/bits/stdint-uintn.h \
+    /usr/include/bits/stdint-least.h \
+    /usr/include/c++/14/bits/uses_allocator.h \
+    /usr/include/c++/14/bits/unique_ptr.h \
+    /usr/include/c++/14/tuple \
+    /usr/include/c++/14/bits/invoke.h \
+    /usr/include/c++/14/bits/stl_function.h \
+    /usr/include/c++/14/backward/binders.h \
+    /usr/include/c++/14/bits/functional_hash.h \
+    /usr/include/c++/14/bits/hash_bytes.h \
+    /usr/include/c++/14/bits/shared_ptr.h \
+    /usr/include/c++/14/iosfwd \
+    /usr/include/c++/14/bits/stringfwd.h \
+    /usr/include/c++/14/bits/postypes.h \
+    /usr/include/c++/14/cwchar \
+    /usr/include/wchar.h \
+    /usr/include/bits/types/wint_t.h \
+    /usr/include/bits/types/mbstate_t.h \
+    /usr/include/c++/14/bits/shared_ptr_base.h \
+    /usr/include/c++/14/typeinfo \
+    /usr/include/c++/14/bits/allocated_ptr.h \
+    /usr/include/c++/14/bits/refwrap.h \
+    /usr/include/c++/14/ext/aligned_buffer.h \
+    /usr/include/c++/14/ext/atomicity.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/gthr.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/gthr-default.h \
+    /usr/include/pthread.h \
+    /usr/include/sched.h \
+    /usr/include/bits/sched.h \
+    /usr/include/linux/sched/types.h \
+    /usr/include/linux/types.h \
+    /usr/include/asm/types.h \
+    /usr/include/asm-generic/types.h \
+    /usr/include/asm-generic/int-ll64.h \
+    /usr/include/asm/bitsperlong.h \
+    /usr/include/asm-generic/bitsperlong.h \
+    /usr/include/linux/posix_types.h \
+    /usr/include/linux/stddef.h \
+    /usr/include/asm/posix_types.h \
+    /usr/include/asm/posix_types_64.h \
+    /usr/include/asm-generic/posix_types.h \
+    /usr/include/bits/types/struct_sched_param.h \
+    /usr/include/bits/cpu-set.h \
+    /usr/include/bits/setjmp.h \
+    /usr/include/bits/types/struct___jmp_buf_tag.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
+    /usr/include/sys/single_threaded.h \
+    /usr/include/c++/14/ext/concurrence.h \
+    /usr/include/c++/14/exception \
+    /usr/include/c++/14/bits/exception_ptr.h \
+    /usr/include/c++/14/bits/cxxabi_init_exception.h \
+    /usr/include/c++/14/bits/nested_exception.h \
+    /usr/include/c++/14/bits/shared_ptr_atomic.h \
+    /usr/include/c++/14/bits/atomic_base.h \
+    /usr/include/c++/14/bits/atomic_lockfree_defines.h \
+    /usr/include/c++/14/backward/auto_ptr.h \
+    /usr/include/c++/14/pstl/glue_memory_defs.h \
+    /usr/include/c++/14/pstl/execution_defs.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/type_traits.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/type_traits \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__algorithm/iter_swap.h \
@@ -570,6 +335,7 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__concepts/concept_macros.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__type_traits/is_integral.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__cstddef/types.h \
+    /usr/include/c++/14/cstddef \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__type_traits/is_move_constructible.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__type_traits/is_constructible.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__type_traits/conjunction.h \
@@ -696,7 +462,9 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/cstdint \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/detail/libcxx/include/cstdint \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__cuda/cstdint_prelude.h \
+    /usr/include/c++/14/cstdint \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/climits \
+    /usr/include/c++/14/climits \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__type_traits/make_const_lvalue_ref.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__type_traits/make_signed.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__type_traits/maybe_const.h \
@@ -710,6 +478,45 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/type_traits/pointer_traits.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/type_traits/is_metafunction_defined.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/iterator/iterator_traits.h \
+    /usr/include/c++/14/iterator \
+    /usr/include/c++/14/bits/stream_iterator.h \
+    /usr/include/c++/14/bits/streambuf_iterator.h \
+    /usr/include/c++/14/streambuf \
+    /usr/include/c++/14/bits/localefwd.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/c++locale.h \
+    /usr/include/c++/14/clocale \
+    /usr/include/locale.h \
+    /usr/include/bits/locale.h \
+    /usr/include/c++/14/cctype \
+    /usr/include/c++/14/bits/ios_base.h \
+    /usr/include/c++/14/bits/locale_classes.h \
+    /usr/include/c++/14/string \
+    /usr/include/c++/14/bits/char_traits.h \
+    /usr/include/c++/14/bits/ostream_insert.h \
+    /usr/include/c++/14/bits/cxxabi_forced.h \
+    /usr/include/c++/14/bits/range_access.h \
+    /usr/include/c++/14/bits/basic_string.h \
+    /usr/include/c++/14/string_view \
+    /usr/include/c++/14/bits/string_view.tcc \
+    /usr/include/c++/14/ext/string_conversions.h \
+    /usr/include/c++/14/cstdio \
+    /usr/include/c++/14/cerrno \
+    /usr/include/errno.h \
+    /usr/include/bits/errno.h \
+    /usr/include/linux/errno.h \
+    /usr/include/asm/errno.h \
+    /usr/include/asm-generic/errno.h \
+    /usr/include/asm-generic/errno-base.h \
+    /usr/include/bits/types/error_t.h \
+    /usr/include/c++/14/bits/charconv.h \
+    /usr/include/c++/14/bits/basic_string.tcc \
+    /usr/include/c++/14/bits/memory_resource.h \
+    /usr/include/c++/14/bits/uses_allocator_args.h \
+    /usr/include/c++/14/bits/locale_classes.tcc \
+    /usr/include/c++/14/system_error \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/error_constants.h \
+    /usr/include/c++/14/stdexcept \
+    /usr/include/c++/14/bits/streambuf.tcc \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/iterator/detail/any_system_tag.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/execution_policy.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/iterator/detail/device_system_tag.h \
@@ -771,6 +578,7 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__tuple_dir/structured_bindings.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__utility/piecewise_construct.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/detail/libcxx/include/cstring \
+    /usr/include/c++/14/cstring \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__memory/construct_at.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__iterator/access.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__memory/voidify.h \
@@ -916,6 +724,18 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/memory.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/pointer.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/reference_forward_declaration.h \
+    /usr/include/c++/14/ostream \
+    /usr/include/c++/14/ios \
+    /usr/include/c++/14/bits/basic_ios.h \
+    /usr/include/c++/14/bits/locale_facets.h \
+    /usr/include/c++/14/cwctype \
+    /usr/include/wctype.h \
+    /usr/include/bits/wctype-wchar.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/ctype_base.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/ctype_inline.h \
+    /usr/include/c++/14/bits/locale_facets.tcc \
+    /usr/include/c++/14/bits/basic_ios.tcc \
+    /usr/include/c++/14/bits/ostream.tcc \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/pointer.inl \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/reference.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/detail/adl/assign_value.h \
@@ -1041,12 +861,19 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__cuda/ensure_current_device.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__cuda/api_wrapper.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__exception/cuda_error.h \
+    /usr/include/c++/14/array \
+    /usr/include/c++/14/compare \
+    /usr/include/c++/14/atomic \
+    /usr/include/c++/14/cassert \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cub/detail/launcher/cuda_runtime.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cuda/detail/core/triple_chevron_launch.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__cccl/cuda_capabilities.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cuda/error.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/error_code.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/detail/errno.h \
+    /usr/include/c++/14/iostream \
+    /usr/include/c++/14/istream \
+    /usr/include/c++/14/bits/istream.tcc \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/detail/error_category.inl \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/functional.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/functional/actor.h \
@@ -1073,6 +900,14 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/targets/x86_64-linux/include/nvtx3/nvtxDetail/nvtxLinkOnce.h \
     /usr/local/cuda-12.9/targets/x86_64-linux/include/nvtx3/nvtxDetail/nvtxTypes.h \
     /usr/local/cuda-12.9/targets/x86_64-linux/include/nvtx3/nvtxDetail/nvtxImpl.h \
+    /usr/include/unistd.h \
+    /usr/include/bits/posix_opt.h \
+    /usr/include/bits/environments.h \
+    /usr/include/bits/confname.h \
+    /usr/include/bits/getopt_posix.h \
+    /usr/include/bits/getopt_core.h \
+    /usr/include/bits/unistd_ext.h \
+    /usr/include/linux/close_range.h \
     /usr/include/dlfcn.h \
     /usr/include/bits/dlfcn.h \
     /usr/include/bits/dl_find_object.h \
@@ -1089,6 +924,8 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/targets/x86_64-linux/include/nvtx3/nvtxDetail/nvtxInit.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/optional \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/detail/libcxx/include/optional \
+    /usr/include/c++/14/optional \
+    /usr/include/c++/14/bits/enable_special_members.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cub/device/dispatch/dispatch_for.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cub/agent/agent_for.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cub/util_ptx.cuh \
@@ -1263,6 +1100,11 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__thread/threading_support.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/chrono \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/detail/libcxx/include/chrono \
+    /usr/include/c++/14/chrono \
+    /usr/include/c++/14/bits/chrono.h \
+    /usr/include/c++/14/ratio \
+    /usr/include/c++/14/ctime \
+    /usr/include/c++/14/bits/parse_numbers.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/ctime \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/detail/libcxx/include/ctime \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/ratio \
@@ -1373,6 +1215,10 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/iterator/reverse_iterator.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/iterator/detail/reverse_iterator_base.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/iterator/detail/reverse_iterator.inl \
+    /usr/include/c++/14/vector \
+    /usr/include/c++/14/bits/stl_vector.h \
+    /usr/include/c++/14/bits/stl_bvector.h \
+    /usr/include/c++/14/bits/vector.tcc \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/vector_base.inl \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/minmax.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/overlapped_copy.h \
@@ -1509,6 +1355,9 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/detail/config/memory_resource.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/mr/polymorphic_adaptor.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/mr/memory_resource.h \
+    /usr/include/c++/14/memory_resource \
+    /usr/include/c++/14/shared_mutex \
+    /usr/include/c++/14/bits/std_mutex.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/mr/validator.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/mr/device_memory_resource.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cuda/memory_resource.h \
@@ -1518,6 +1367,158 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/mr/new.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cpp/pointer.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/system/cuda/pointer.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/stdc++.h \
+    /usr/include/c++/14/cfloat \
+    /usr/lib/gcc/x86_64-redhat-linux/14/include/float.h \
+    /usr/include/c++/14/ciso646 \
+    /usr/include/c++/14/csetjmp \
+    /usr/include/setjmp.h \
+    /usr/include/c++/14/cstdarg \
+    /usr/include/c++/14/algorithm \
+    /usr/include/c++/14/bits/stl_algo.h \
+    /usr/include/c++/14/bits/algorithmfwd.h \
+    /usr/include/c++/14/bits/stl_heap.h \
+    /usr/include/c++/14/bits/uniform_int_dist.h \
+    /usr/include/c++/14/pstl/glue_algorithm_defs.h \
+    /usr/include/c++/14/bitset \
+    /usr/include/c++/14/functional \
+    /usr/include/c++/14/bits/std_function.h \
+    /usr/include/c++/14/unordered_map \
+    /usr/include/c++/14/bits/unordered_map.h \
+    /usr/include/c++/14/bits/hashtable.h \
+    /usr/include/c++/14/bits/hashtable_policy.h \
+    /usr/include/c++/14/bits/node_handle.h \
+    /usr/include/c++/14/bits/erase_if.h \
+    /usr/include/c++/14/numeric \
+    /usr/include/c++/14/bits/stl_numeric.h \
+    /usr/include/c++/14/pstl/glue_numeric_defs.h \
+    /usr/include/c++/14/scoped_allocator \
+    /usr/include/c++/14/typeindex \
+    /usr/include/c++/14/any \
+    /usr/include/c++/14/variant \
+    /usr/include/c++/14/csignal \
+    /usr/include/signal.h \
+    /usr/include/bits/signum-generic.h \
+    /usr/include/bits/signum-arch.h \
+    /usr/include/bits/types/sig_atomic_t.h \
+    /usr/include/bits/types/siginfo_t.h \
+    /usr/include/bits/types/__sigval_t.h \
+    /usr/include/bits/siginfo-arch.h \
+    /usr/include/bits/siginfo-consts.h \
+    /usr/include/bits/siginfo-consts-arch.h \
+    /usr/include/bits/types/sigval_t.h \
+    /usr/include/bits/types/sigevent_t.h \
+    /usr/include/bits/sigevent-consts.h \
+    /usr/include/bits/sigaction.h \
+    /usr/include/bits/sigcontext.h \
+    /usr/include/bits/types/stack_t.h \
+    /usr/include/sys/ucontext.h \
+    /usr/include/bits/sigstack.h \
+    /usr/include/bits/sigstksz.h \
+    /usr/include/bits/ss_flags.h \
+    /usr/include/bits/types/struct_sigstack.h \
+    /usr/include/bits/sigthread.h \
+    /usr/include/bits/signal_ext.h \
+    /usr/include/c++/14/ccomplex \
+    /usr/include/c++/14/complex \
+    /usr/include/c++/14/sstream \
+    /usr/include/c++/14/bits/sstream.tcc \
+    /usr/include/c++/14/cfenv \
+    /usr/include/c++/14/fenv.h \
+    /usr/include/fenv.h \
+    /usr/include/bits/fenv.h \
+    /usr/include/c++/14/cinttypes \
+    /usr/include/inttypes.h \
+    /usr/include/c++/14/cstdalign \
+    /usr/lib/gcc/x86_64-redhat-linux/14/include/stdalign.h \
+    /usr/include/c++/14/cstdbool \
+    /usr/lib/gcc/x86_64-redhat-linux/14/include/stdbool.h \
+    /usr/include/c++/14/ctgmath \
+    /usr/include/c++/14/cuchar \
+    /usr/include/uchar.h \
+    /usr/include/c++/14/deque \
+    /usr/include/c++/14/bits/stl_deque.h \
+    /usr/include/c++/14/bits/deque.tcc \
+    /usr/include/c++/14/fstream \
+    /usr/include/c++/14/bits/codecvt.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/c++io.h \
+    /usr/include/c++/14/bits/fstream.tcc \
+    /usr/include/c++/14/iomanip \
+    /usr/include/c++/14/locale \
+    /usr/include/c++/14/bits/locale_facets_nonio.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/time_members.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/messages_members.h \
+    /usr/include/libintl.h \
+    /usr/include/c++/14/bits/locale_facets_nonio.tcc \
+    /usr/include/c++/14/bits/locale_conv.h \
+    /usr/include/c++/14/bits/quoted_string.h \
+    /usr/include/c++/14/list \
+    /usr/include/c++/14/bits/stl_list.h \
+    /usr/include/c++/14/bits/list.tcc \
+    /usr/include/c++/14/map \
+    /usr/include/c++/14/bits/stl_tree.h \
+    /usr/include/c++/14/bits/stl_map.h \
+    /usr/include/c++/14/bits/stl_multimap.h \
+    /usr/include/c++/14/queue \
+    /usr/include/c++/14/bits/stl_queue.h \
+    /usr/include/c++/14/set \
+    /usr/include/c++/14/bits/stl_set.h \
+    /usr/include/c++/14/bits/stl_multiset.h \
+    /usr/include/c++/14/stack \
+    /usr/include/c++/14/bits/stl_stack.h \
+    /usr/include/c++/14/valarray \
+    /usr/include/c++/14/bits/valarray_array.h \
+    /usr/include/c++/14/bits/valarray_array.tcc \
+    /usr/include/c++/14/bits/valarray_before.h \
+    /usr/include/c++/14/bits/slice_array.h \
+    /usr/include/c++/14/bits/valarray_after.h \
+    /usr/include/c++/14/bits/gslice.h \
+    /usr/include/c++/14/bits/gslice_array.h \
+    /usr/include/c++/14/bits/mask_array.h \
+    /usr/include/c++/14/bits/indirect_array.h \
+    /usr/include/c++/14/codecvt \
+    /usr/include/c++/14/condition_variable \
+    /usr/include/c++/14/bits/unique_lock.h \
+    /usr/include/c++/14/forward_list \
+    /usr/include/c++/14/bits/forward_list.h \
+    /usr/include/c++/14/bits/forward_list.tcc \
+    /usr/include/c++/14/future \
+    /usr/include/c++/14/mutex \
+    /usr/include/c++/14/bits/atomic_futex.h \
+    /usr/include/c++/14/bits/std_thread.h \
+    /usr/include/c++/14/random \
+    /usr/include/c++/14/bits/random.h \
+    /usr/include/c++/14/x86_64-redhat-linux/bits/opt_random.h \
+    /usr/include/c++/14/bits/random.tcc \
+    /usr/include/c++/14/regex \
+    /usr/include/c++/14/bits/regex_constants.h \
+    /usr/include/c++/14/bits/regex_error.h \
+    /usr/include/c++/14/bits/regex_automaton.h \
+    /usr/include/c++/14/bits/regex_automaton.tcc \
+    /usr/include/c++/14/bits/regex_scanner.h \
+    /usr/include/c++/14/bits/regex_scanner.tcc \
+    /usr/include/c++/14/bits/regex_compiler.h \
+    /usr/include/c++/14/bits/regex_compiler.tcc \
+    /usr/include/c++/14/bits/regex.h \
+    /usr/include/c++/14/bits/regex.tcc \
+    /usr/include/c++/14/bits/regex_executor.h \
+    /usr/include/c++/14/bits/regex_executor.tcc \
+    /usr/include/c++/14/thread \
+    /usr/include/c++/14/bits/this_thread_sleep.h \
+    /usr/include/c++/14/unordered_set \
+    /usr/include/c++/14/bits/unordered_set.h \
+    /usr/include/c++/14/charconv \
+    /usr/include/c++/14/filesystem \
+    /usr/include/c++/14/bits/fs_fwd.h \
+    /usr/include/c++/14/bits/fs_path.h \
+    /usr/include/c++/14/bits/fs_dir.h \
+    /usr/include/c++/14/bits/fs_ops.h \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/dataloader.cuh \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/layers.cuh \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../Data/container.cu \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../Data/../Layers/operators.cuh \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../Data/../Layers/../Data/container.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_kernel.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_discrete.h \
@@ -1534,7 +1535,6 @@ CMakeFiles/NeuralNetProject.dir/Data/dataloader.cu.o : /home/mrgrinch/coding/CNN
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_lognormal.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_poisson.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_discrete2.h \
-    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Data/../Layers/../Data/../utils.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/thrust/host_vector.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/cuda/std/__thread/threading_support_pthread.h \
     /usr/include/semaphore.h \

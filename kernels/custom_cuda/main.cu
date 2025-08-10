@@ -3,6 +3,9 @@
 #include "neuralnet.cu"
 #include "utils.cuh"
 #include <iostream>
+
+#define LEARNING_RATE 0.05
+#define L2 0.05
 int main() {
   // Starting point of the include
   // Populate the Weights and biases with random numbers (Can be of any type)
@@ -25,7 +28,7 @@ int main() {
   myModel->addLinear(14 * 14 * 64, 1024);
   myModel->addRelu(1024);
   myModel->addLinear(1024, 10);
-  myModel->train();
+  myModel->train(LEARNING_RATE, L2);
   myModel->printResults();
 
   return 0;

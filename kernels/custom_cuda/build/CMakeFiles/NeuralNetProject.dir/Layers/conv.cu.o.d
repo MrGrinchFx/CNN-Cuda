@@ -1371,6 +1371,7 @@ CMakeFiles/NeuralNetProject.dir/Layers/conv.cu.o : /home/mrgrinch/coding/CNN-Cud
     /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/layers.cuh \
     /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/../Data/container.cu \
     /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/../Data/../Layers/operators.cuh \
+    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/../Data/../Layers/../utils.cuh \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_kernel.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_discrete.h \
@@ -1387,7 +1388,6 @@ CMakeFiles/NeuralNetProject.dir/Layers/conv.cu.o : /home/mrgrinch/coding/CNN-Cud
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_lognormal.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_poisson.h \
     /usr/local/cuda-12.9/bin/../targets/x86_64-linux/include/curand_discrete2.h \
-    /home/mrgrinch/coding/CNN-Cuda/kernels/custom_cuda/Layers/../Data/../utils.cuh \
     /usr/include/c++/14/unordered_map \
     /usr/include/c++/14/bits/unordered_map.h \
     /usr/include/c++/14/bits/hashtable.h \

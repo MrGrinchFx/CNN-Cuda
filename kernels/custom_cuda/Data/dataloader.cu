@@ -1,17 +1,17 @@
 
+#include "../utils.cuh"
 #include "bits/stdc++.h"
 #include "dataloader.cuh"
 #include "thrust/host_vector.h"
 #include "thrust/mr/allocator.h"
 #include "thrust/system/cuda/memory_resource.h"
-#include "utils.cuh"
 #include <chrono>
 #include <fstream>
 #include <random>
 #include <vector>
 
 template <typename T>
-Dataloader<T>::Dataloader(std::string dataPath, bool shuffle)
+Dataloader<T>::Dataloader(std::string dataPath, bool shuffle, int batchSize)
     : shuffle(shuffle), trainIndex(0), testIndex(0) {
   this->readImgs(dataPath + "/train-images-idx3-ubyte", this->trainData);
   this->readLabels(dataPath + "/train-labels-idx1-ubyte", this->trainLabel);
@@ -35,7 +35,7 @@ template <typename T> void Dataloader<T>::reset() {
   }
 }
 
-template <typename T> void Dataloader<T>::forward(int batchSize, bool isTrain) {
+template <typename T> void Dataloader<T>::forward() {
   if (isTrain) {
     int startIdx = trainIndex;
     int endIdx = std::min(startIdx + batchSize, (int)this->trainData.size());
@@ -48,8 +48,8 @@ template <typename T> void Dataloader<T>::forward(int batchSize, bool isTrain) {
     std::vector<int> labelShape{size, 10};
 
     // LEARN!!!!
-    INIT_CONTAINER(this->output, shape);
-    INIT_CONTAINER(this->outputLabel, labelShape);
+    INIT_CONTAINER(this->output, shape, T);
+    INIT_CONTAINER(this->outputLabel, labelShape, T);
 
     thrust::fill(this->outputLabel->getData().begin(),
                  this->outputLabel->getData().end(), 0);
@@ -84,8 +84,8 @@ template <typename T> void Dataloader<T>::forward(int batchSize, bool isTrain) {
     std::vector<int> shape{size, 1, this->height, this->width};
     std::vector<int> labelShape{size, 10};
 
-    INIT_CONTAINER(this->output, shape);
-    INIT_CONTAINER(this->outputLabel, labelShape);
+    INIT_CONTAINER(this->output, shape, T);
+    INIT_CONTAINER(this->outputLabel, labelShape, T);
 
     thrust::fill(this->outputLabel->getData().begin(),
                  this->outputLabel->getData().end(), 0);

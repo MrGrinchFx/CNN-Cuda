@@ -1,7 +1,7 @@
 #include "../Data/container.cuh"
 #include "layers.cuh"
 #include <unordered_map>
-template <typename T> class Conv : Layer<T> {
+template <typename T> class Conv : public Layer<T> {
 public:
   Conv(int inputChannels, int outputChannels, int kernelSize, int padding,
        int stride);
